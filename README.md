@@ -1,2 +1,2 @@
-# statistics
-Una risorsa con il codice C # e VB.NET da me sviluppata per il corso di statistica
+# Statistics Resource
+A resource with the C# and VB.NET code developed by me for statistics course
