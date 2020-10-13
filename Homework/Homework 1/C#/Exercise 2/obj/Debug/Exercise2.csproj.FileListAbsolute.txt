@@ -1,0 +1,10 @@
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\bin\Debug\Exercise2.exe.config
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\bin\Debug\Exercise2.exe
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\bin\Debug\Exercise2.pdb
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\obj\Debug\Exercise2.csprojAssemblyReference.cache
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\obj\Debug\Exercise2.Form1.resources
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\obj\Debug\Exercise2.Properties.Resources.resources
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\obj\Debug\Exercise2.csproj.GenerateResource.cache
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\obj\Debug\Exercise2.csproj.CoreCompileInputs.cache
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\obj\Debug\Exercise2.exe
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Exercise2 - C#\Exercise2\obj\Debug\Exercise2.pdb
