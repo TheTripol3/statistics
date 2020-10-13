@@ -1,0 +1,12 @@
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\bin\Debug\Exercise3.exe.config
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\bin\Debug\Exercise3.exe
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\bin\Debug\Exercise3.pdb
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\bin\Debug\Exercise3.xml
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\obj\Debug\Exercise3.vbprojAssemblyReference.cache
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\obj\Debug\Exercise3.Form1.resources
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\obj\Debug\Exercise3.Resources.resources
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\obj\Debug\Exercise3.vbproj.GenerateResource.cache
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\obj\Debug\Exercise3.vbproj.CoreCompileInputs.cache
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\obj\Debug\Exercise3.exe
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\obj\Debug\Exercise3.xml
+D:\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 1\Practical\Lesson 1\Ecercise3 - vb\Exercise3\Exercise3\obj\Debug\Exercise3.pdb
