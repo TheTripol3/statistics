@@ -1,0 +1,20 @@
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\obj\Debug\Exercise 1.csprojAssemblyReference.cache
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\obj\Debug\Exercise_1.Form1.resources
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\obj\Debug\Exercise_1.Properties.Resources.resources
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\obj\Debug\Exercise 1.csproj.GenerateResource.cache
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\obj\Debug\Exercise 1.csproj.CoreCompileInputs.cache
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\bin\Debug\Exercise 1.exe.config
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\bin\Debug\Exercise 1.exe
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\bin\Debug\Exercise 1.pdb
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\obj\Debug\Exercise 1.exe
+C:\Users\Andrea\Desktop\APP\Exercise 1\Exercise 1\obj\Debug\Exercise 1.pdb
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\bin\Debug\Exercise 1.exe.config
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\bin\Debug\Exercise 1.exe
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\bin\Debug\Exercise 1.pdb
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\obj\Debug\Exercise 1.csprojAssemblyReference.cache
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\obj\Debug\Exercise_1.Form1.resources
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\obj\Debug\Exercise_1.Properties.Resources.resources
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\obj\Debug\Exercise 1.csproj.GenerateResource.cache
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\obj\Debug\Exercise 1.csproj.CoreCompileInputs.cache
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\obj\Debug\Exercise 1.exe
+C:\Users\Andrea\Desktop\APP\Exercise 1 - C#\Exercise 1\obj\Debug\Exercise 1.pdb
