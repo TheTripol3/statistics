@@ -1,0 +1,12 @@
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\bin\Debug\Exercise 1 - vb.exe.config
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\bin\Debug\Exercise 1 - vb.exe
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\bin\Debug\Exercise 1 - vb.pdb
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\bin\Debug\Exercise 1 - vb.xml
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\obj\Debug\Exercise 2 - vb.vbprojAssemblyReference.cache
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\obj\Debug\Exercise_1___vb.Form1.resources
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\obj\Debug\Exercise_1___vb.Resources.resources
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\obj\Debug\Exercise 2 - vb.vbproj.GenerateResource.cache
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\obj\Debug\Exercise 2 - vb.vbproj.CoreCompileInputs.cache
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\obj\Debug\Exercise 1 - vb.exe
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\obj\Debug\Exercise 1 - vb.xml
+C:\Users\Andrea\Desktop\APP\Exercise 2 - vb\Exercise 1 - vb\obj\Debug\Exercise 1 - vb.pdb
