@@ -63,12 +63,12 @@
 
 
         'Value between first interval and center 
-        If ((listIntv(0).lowerPoint < randomNumber) AndAlso (randomNumber <= listIntv(listIntv.Count / 2).lowerPoint)) Then
+        If ((listIntv(0).lowerPoint < randomNumber) AndAlso (randomNumber <= listIntv(Math.Ceiling(listIntv.Count / 2)).lowerPoint)) Then
 
             Return "L"
 
             'Value between center and last interval
-        ElseIf ((listIntv(listIntv.Count / 2).lowerPoint < randomNumber) AndAlso (randomNumber <= listIntv(listIntv.Count - 1).upperPoint)) Then
+        ElseIf ((listIntv(Math.Ceiling(listIntv.Count / 2)).lowerPoint < randomNumber) AndAlso (randomNumber <= listIntv(listIntv.Count - 1).upperPoint)) Then
 
             Return "R"
 
@@ -174,7 +174,7 @@
         Select Case range
             'Left from the center (the value exists) 
             Case "L"
-                For index As Integer = 0 To ((listInt.Count / 2) - 1)
+                For index As Integer = 0 To (Math.Ceiling((listInt.Count / 2)) - 1)
                     If ((valuesC > listInt(index).lowerPoint) AndAlso (valuesC <= listInt(index).upperPoint)) Then
                         listInt(index).countInt += 1
                         Exit Sub
@@ -183,7 +183,7 @@
 
             'Right from the center (the value exists) 
             Case "R"
-                For index As Integer = (listInt.Count / 2) To (listInt.Count - 1)
+                For index As Integer = Math.Ceiling((listInt.Count / 2)) To (listInt.Count - 1)
                     If ((valuesC > listInt(index).lowerPoint) AndAlso (valuesC <= listInt(index).upperPoint)) Then
                         listInt(index).countInt += 1
                         Exit Sub
