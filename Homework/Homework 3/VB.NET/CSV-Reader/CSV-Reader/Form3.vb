@@ -74,27 +74,126 @@ Public Class Form3
 
                     If obj.FlagCaption Then
                         Try
+                            If listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString = "" Then
+                                Select Case types.ToString
+                                    Case "System.Boolean"
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Value = ""
+                                    Case "System.Int32"
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Value = 0
+                                    Case "System.Int64"
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Value = 0
+                                    Case "System.Double"
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Value = 0
+                                    Case "System.DateTime"
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Value = ""
+                                    Case Else
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(row - 1).Cells(k).Value = ""
+                                End Select
+                            Else
+                                Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                Me.DataGridView1.Rows(row - 1).Cells(k).Value = Convert.ChangeType(listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString, types, CultureInfo.InvariantCulture)
+                            End If
 
-                            Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
-                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = Convert.ChangeType(listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString, types, CultureInfo.InvariantCulture)
 
                         Catch ex As Exception
                             If (j <> listColumn.ElementAt(k).ListColumnAll.Count - 1) Then
                                 errorF = True
-                                Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = Color.Yellow
-                                Me.DataGridView1.Rows(row - 1).Cells(k).Value = Nothing
+
+                                If listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString = "" Then
+                                    Select Case types.ToString
+                                        Case "System.Boolean"
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = ""
+                                        Case "System.Int32"
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = 0
+                                        Case "System.Int64"
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = 0
+                                        Case "System.Double"
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = 0
+                                        Case "System.DateTime"
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = ""
+                                        Case Else
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = ""
+                                    End Select
+                                Else
+                                    Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = Color.Yellow
+                                    Me.DataGridView1.Rows(row - 1).Cells(k).Value = Nothing
+                                End If
+
                             End If
                         End Try
                         row += 1
                     Else
                         Try
-                            Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
-                            Me.DataGridView1.Rows(j).Cells(k).Value = Convert.ChangeType(listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString, types, CultureInfo.InvariantCulture)
+                            If listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString = "" Then
+                                Select Case types.ToString
+                                    Case "System.Boolean"
+                                        Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(j).Cells(k).Value = ""
+                                    Case "System.Int32"
+                                        Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(j).Cells(k).Value = 0
+                                    Case "System.Int64"
+                                        Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(j).Cells(k).Value = 0
+                                    Case "System.Double"
+                                        Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(j).Cells(k).Value = 0
+                                    Case "System.DateTime"
+                                        Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(j).Cells(k).Value = ""
+                                    Case Else
+                                        Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                        Me.DataGridView1.Rows(j).Cells(k).Value = ""
+                                End Select
+                            Else
+                                Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                Me.DataGridView1.Rows(j).Cells(k).Value = Convert.ChangeType(listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString, types, CultureInfo.InvariantCulture)
+                            End If
+
+
+
+
                         Catch ex As Exception
                             If (j <> listColumn.ElementAt(k).ListColumnAll.Count - 1) Then
                                 errorF = True
-                                Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = Color.Yellow
-                                Me.DataGridView1.Rows(j).Cells(k).Value = Nothing
+
+                                If listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString = "" Then
+                                    Select Case types.ToString
+                                        Case "System.Boolean"
+                                            Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(j).Cells(k).Value = ""
+                                        Case "System.Int32"
+                                            Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(j).Cells(k).Value = 0
+                                        Case "System.Int64"
+                                            Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(j).Cells(k).Value = 0
+                                        Case "System.Double"
+                                            Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(j).Cells(k).Value = 0
+                                        Case "System.DateTime"
+                                            Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(j).Cells(k).Value = ""
+                                        Case Else
+                                            Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
+                                            Me.DataGridView1.Rows(j).Cells(k).Value = ""
+                                    End Select
+                                Else
+                                    Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = Color.Yellow
+                                    Me.DataGridView1.Rows(j).Cells(k).Value = Nothing
+                                End If
                             End If
                         End Try
                     End If
@@ -203,19 +302,29 @@ Public Class Form3
     Private Sub CheckBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles CheckBox1.MouseClick
         If IsNumeric(Me.TextBox1.Text) Then
             Dim countRows As Integer = Me.TextBox1.Text
-
-            If countRows = 0 Then
-                countFlag = listColumn.ElementAt(0).ListColumnAll.Count
-                Form2.countFlag = listColumn.ElementAt(0).ListColumnAll.Count
-            Else
-                countFlag = countRows
-                Form2.countFlag = countRows
-            End If
+            Try
+                If countRows = 0 Then
+                    If listColumn.ElementAt(0).ListColumnAll.Count = 0 Then
+                        countFlag = listColumn.ElementAt(0).ListColumnAll.Count
+                        Form2.countFlag = listColumn.ElementAt(0).ListColumnAll.Count
+                    Else
+                        countFlag = 0
+                        Form2.countFlag = 0
+                    End If
+                Else
+                    countFlag = countRows
+                    Form2.countFlag = countRows
+                End If
+            Catch ex As Exception
+                countFlag = 0
+                Form2.countFlag = 0
+                MessageBox.Show("There are no data. . .", "Warning")
+            End Try
 
             createGridView()
 
         Else
-            MessageBox.Show("It must be a number. Write 0 to get all the data", "Warning")
+            MessageBox.Show("It must be a number.", "Warning")
         End If
     End Sub
 

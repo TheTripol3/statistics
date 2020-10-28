@@ -353,29 +353,29 @@ Public Class Form2
                 End Try
 
 
-                For Each objectC3 In objectC2.ListColumnAll
+                'For Each objectC3 In objectC2.ListColumnAll
 
-                    If (objectC1.FlagCaption) Then
+                '    If (objectC1.FlagCaption) Then
 
-                        If flagCount <> 0 Then
-                            If (flagCount = 7) Then
-                                Exit For
-                            Else
-                                TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
-                            End If
-                        End If
+                '        If flagCount <> 0 Then
+                '            If (flagCount = 15) Then
+                '                Exit For
+                '            Else
+                '                TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
+                '            End If
+                '        End If
 
-                    Else
-                        If (flagCount = 7) Then
-                            Exit For
-                        Else
-                            TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
-                        End If
-                    End If
+                '    Else
+                '        If (flagCount = 15) Then
+                '            Exit For
+                '        Else
+                '            TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
+                '        End If
+                '    End If
 
-                    flagCount += 1
+                '    flagCount += 1
 
-                Next
+                'Next
 
                 countNode += 1
 
@@ -418,31 +418,31 @@ Public Class Form2
                 End Try
 
 
-                For Each objectC3 In objectC2.ListColumnAll
+                'For Each objectC3 In objectC2.ListColumnAll
 
-                    If (objectC1.FlagCaption) Then
+                '    If (objectC1.FlagCaption) Then
 
-                        If flagCount <> 0 Then
+                '        If flagCount <> 0 Then
 
-                            If (flagCount = 7) Then
-                                Exit For
-                            Else
-                                TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
-                            End If
+                '            If (flagCount = 15) Then
+                '                Exit For
+                '            Else
+                '                TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
+                '            End If
 
-                        End If
+                '        End If
 
-                    Else
-                        If (flagCount = 7) Then
-                            Exit For
-                        Else
-                            TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
-                        End If
+                '    Else
+                '        If (flagCount = 15) Then
+                '            Exit For
+                '        Else
+                '            TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
+                '        End If
 
-                    End If
+                '    End If
 
-                    flagCount += 1
-                Next
+                '    flagCount += 1
+                'Next
 
                 countNode += 1
 
@@ -540,7 +540,7 @@ Public Class Form2
                     updateCountParse(result)
 
 
-                    If flagCount > 20 Then
+                    If flagCount > 1000 Then
                         Exit For
                     End If
 
@@ -568,14 +568,14 @@ Public Class Form2
         dict.Add("String", countString)
 
         dict = dict.OrderBy(Function(x) x.Value).ToDictionary(Function(x) x.Key, Function(x) x.Value)
-        checkType(dict.Keys.Last, dict.Values(1), obj)
+        checkType(dict.Keys.Last, obj)
 
     End Sub
 
 
 
     'Sub: Checks what kind of data an element is
-    Private Sub checkType(str As String, t As Integer, obj As listAllColumn)
+    Private Sub checkType(str As String, obj As listAllColumn)
 
         Dim stringText As String = "file"
         Dim booleanText As Boolean = True
@@ -586,39 +586,25 @@ Public Class Form2
 
         Select Case str
             Case "Boolean"
-                If t = 0 Then
-                    obj.typeT = booleanText.GetType()
-                Else
-                    obj.typeT = stringText.GetType()
-                End If
+
+                obj.typeT = booleanText.GetType()
 
             Case "Int32"
-                If t = 0 Then
-                    obj.typeT = integerText.GetType()
-                Else
-                    obj.typeT = stringText.GetType()
-                End If
+
+                obj.typeT = integerText.GetType()
+
 
             Case "Int64"
-                If t = 0 Then
-                    obj.typeT = longText.GetType()
-                Else
-                    obj.typeT = stringText.GetType()
-                End If
+                obj.typeT = longText.GetType()
+
 
             Case "Double"
-                If t = 0 Then
-                    obj.typeT = doubleText.GetType()
-                Else
-                    obj.typeT = stringText.GetType()
-                End If
+                obj.typeT = doubleText.GetType()
+
 
             Case "DateTime"
-                If t = 0 Then
-                    obj.typeT = dateText.GetType()
-                Else
-                    obj.typeT = stringText.GetType()
-                End If
+                obj.typeT = dateText.GetType()
+
 
             Case Else
                 obj.typeT = stringText.GetType()

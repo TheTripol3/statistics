@@ -91,7 +91,28 @@ Public Class Form6
                     Dim arrT As ArrayList = New ArrayList()
 
                     For s As Integer = 1 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
-                        Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
+                        Dim a
+
+                        If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" Then
+
+                            Select Case k.ToString
+                                Case "System.Boolean"
+                                    a = ""
+                                Case "System.Int32"
+                                    a = 0
+                                Case "System.Int64"
+                                    a = 0
+                                Case "System.Double"
+                                    a = 0
+                                Case "System.DateTime"
+                                    a = ""
+                                Case Else
+                                    a = ""
+                            End Select
+                        Else
+                            a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
+
+                        End If
                         arrT.Add(a)
                     Next
 
@@ -147,7 +168,29 @@ Public Class Form6
                     Dim arrT As ArrayList = New ArrayList()
 
                     For s As Integer = 0 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
-                        Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
+                        Dim a
+
+                        If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" Then
+
+                            Select Case k.ToString
+                                Case "System.Boolean"
+                                    a = ""
+                                Case "System.Int32"
+                                    a = 0
+                                Case "System.Int64"
+                                    a = 0
+                                Case "System.Double"
+                                    a = 0
+                                Case "System.DateTime"
+                                    a = ""
+                                Case Else
+                                    a = ""
+                            End Select
+                        Else
+                            a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
+
+                        End If
+
                         arrT.Add(a)
                     Next
 
@@ -239,13 +282,56 @@ Public Class Form6
             If listCp(0).FlagCaption Then
 
                 For s As Integer = 1 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
-                    Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
+                    Dim a
+
+                    If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" Then
+
+                        Select Case k.ToString
+                            Case "System.Boolean"
+                                a = ""
+                            Case "System.Int32"
+                                a = 0
+                            Case "System.Int64"
+                                a = 0
+                            Case "System.Double"
+                                a = 0
+                            Case "System.DateTime"
+                                a = ""
+                            Case Else
+                                a = ""
+                        End Select
+                    Else
+                        a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
+
+                    End If
+
                 Next
 
             Else
 
                 For s As Integer = 0 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
-                    Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
+                    Dim a
+
+                    If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" Then
+
+                        Select Case k.ToString
+                            Case "System.Boolean"
+                                a = ""
+                            Case "System.Int32"
+                                a = 0
+                            Case "System.Int64"
+                                a = 0
+                            Case "System.Double"
+                                a = 0
+                            Case "System.DateTime"
+                                a = ""
+                            Case Else
+                                a = ""
+                        End Select
+                    Else
+                        a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
+
+                    End If
                 Next
             End If
 

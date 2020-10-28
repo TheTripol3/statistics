@@ -149,7 +149,13 @@ Public Class Form4
                 Dim k As Integer = 0
                 For Each obj In Form2.listColumn.ElementAt(index).ListColumnAll
                     If k <> 0 Then
-                        Dim flagBoolean = Boolean.Parse(obj)
+                        If obj = "" Then
+                            Dim flagBoolean = Boolean.Parse("")
+                        Else
+                            Dim flagBoolean = Boolean.Parse(obj)
+
+                        End If
+
                     End If
                     k += 1
                 Next
@@ -161,7 +167,13 @@ Public Class Form4
                 Dim k As Integer = 0
                 For Each obj In Form2.listColumn.ElementAt(index).ListColumnAll
                     If k <> 0 Then
-                        Dim flagInt = Integer.Parse(obj)
+                        If obj = "" Then
+                            Dim flagInt = Integer.Parse("0")
+                        Else
+                            Dim flagInt = Integer.Parse(obj)
+
+                        End If
+
                     End If
                     k += 1
                 Next
@@ -172,7 +184,13 @@ Public Class Form4
                 Dim k As Integer = 0
                 For Each obj In Form2.listColumn.ElementAt(index).ListColumnAll
                     If k <> 0 Then
-                        Dim flagLong = Long.Parse(obj)
+                        If obj = "" Then
+                            Dim flagLong = Long.Parse("0")
+                        Else
+                            Dim flagLong = Long.Parse(obj)
+
+                        End If
+
                     End If
                     k += 1
                 Next
@@ -182,7 +200,13 @@ Public Class Form4
                 Dim k As Integer = 0
                 For Each obj In Form2.listColumn.ElementAt(index).ListColumnAll
                     If k <> 0 Then
-                        Dim flagDouble = Double.Parse(obj)
+                        If obj = "" Then
+                            Dim flagDouble = Double.Parse("0.0")
+                        Else
+                            Dim flagDouble = Double.Parse(obj)
+
+                        End If
+
                     End If
                     k += 1
                 Next
@@ -194,7 +218,13 @@ Public Class Form4
                 Dim k As Integer = 0
                 For Each obj In Form2.listColumn.ElementAt(index).ListColumnAll
                     If k <> 0 Then
-                        Dim flagDate = Date.Parse(obj)
+                        If obj = "" Then
+                            Dim flagDate = Date.Parse("")
+                        Else
+                            Dim flagDate = Date.Parse(obj)
+
+                        End If
+
                     End If
                     k += 1
                 Next
@@ -206,7 +236,13 @@ Public Class Form4
                 Dim k As Integer = 0
                 For Each obj In Form2.listColumn.ElementAt(index).ListColumnAll
                     If k <> 0 Then
-                        Dim flagString = CStr(obj)
+                        If obj = "" Then
+                            Dim flagString = CStr("")
+                        Else
+                            Dim flagString = CStr(obj)
+
+                        End If
+
                     End If
                     k += 1
                 Next
