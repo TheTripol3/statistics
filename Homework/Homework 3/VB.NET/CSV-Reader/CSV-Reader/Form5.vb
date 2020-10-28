@@ -86,7 +86,7 @@ Public Class Form5
                     For s As Integer = 1 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
                         Dim a
 
-                        If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" Then
+                        If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" OrElse listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "NA" Then
 
                             Select Case k.ToString
                                 Case "System.Boolean"
@@ -132,7 +132,7 @@ Public Class Form5
 
                         Dim a
 
-                        If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" Then
+                        If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" OrElse listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "NA" Then
 
                             Select Case k.ToString
                                 Case "System.Boolean"
@@ -216,7 +216,7 @@ Public Class Form5
                 For s As Integer = 1 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
                     Dim a
 
-                    If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" Then
+                    If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" OrElse listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "NA" Then
 
                         Select Case k.ToString
                             Case "System.Boolean"
@@ -244,7 +244,7 @@ Public Class Form5
                 For s As Integer = 0 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
                     Dim a
 
-                    If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" Then
+                    If listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "" OrElse listColumn.ElementAt(order).ListColumnAll.ElementAt(s) = "NA" Then
 
                         Select Case k.ToString
                             Case "System.Boolean"

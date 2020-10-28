@@ -74,7 +74,7 @@ Public Class Form3
 
                     If obj.FlagCaption Then
                         Try
-                            If listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString = "" Then
+                            If listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString = "" OrElse listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString = "NA" Then
                                 Select Case types.ToString
                                     Case "System.Boolean"
                                         Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
@@ -105,7 +105,7 @@ Public Class Form3
                             If (j <> listColumn.ElementAt(k).ListColumnAll.Count - 1) Then
                                 errorF = True
 
-                                If listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString = "" Then
+                                If listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString = "" OrElse listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString = "NA" Then
                                     Select Case types.ToString
                                         Case "System.Boolean"
                                             Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
@@ -136,7 +136,7 @@ Public Class Form3
                         row += 1
                     Else
                         Try
-                            If listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString = "" Then
+                            If listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString = "" OrElse listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString = "NA" Then
                                 Select Case types.ToString
                                     Case "System.Boolean"
                                         Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
@@ -169,7 +169,7 @@ Public Class Form3
                             If (j <> listColumn.ElementAt(k).ListColumnAll.Count - 1) Then
                                 errorF = True
 
-                                If listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString = "" Then
+                                If listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString = "" OrElse listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString = "" Then
                                     Select Case types.ToString
                                         Case "System.Boolean"
                                             Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
