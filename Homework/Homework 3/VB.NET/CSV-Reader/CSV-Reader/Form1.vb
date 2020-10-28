@@ -1,4 +1,5 @@
-﻿Public Class Form1
+﻿'Form1 File
+Public Class Form1
     Private Sub Panel1_DragDrop(sender As Object, e As DragEventArgs) Handles Panel1.DragDrop
         Dim files As String() = CType(e.Data.GetData(DataFormats.FileDrop, False), String())
 
@@ -7,6 +8,7 @@
             Dim fi As New IO.FileInfo(file)
             Dim extn As String = fi.Extension
 
+            'If there is no file or it is not txt or csv
             If String.IsNullOrWhiteSpace(file) Or Not checkFilter(extn) Then
                 MessageBox.Show("You have to choose a csv or txt file", "Error", MessageBoxButtons.OK)
             Else
@@ -37,6 +39,7 @@
     End Sub
 
 
+    'Check file extension
     Function checkFilter(ext As String)
 
         Dim flag As Boolean = False
@@ -45,11 +48,10 @@
             flag = True
         End If
 
-
         Return flag
     End Function
 
-
+    'Show Form2 (Initial Setup)
     Private Sub Button2_MouseClick(sender As Object, e As MouseEventArgs) Handles Button2.MouseClick
         Me.Hide()
         Form2.Show()

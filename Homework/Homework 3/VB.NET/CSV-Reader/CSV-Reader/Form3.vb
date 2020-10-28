@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿'Form3: DataView
+Imports System.IO
 
 Public Class Form3
 
@@ -18,6 +19,7 @@ Public Class Form3
         createSidebar()
     End Sub
 
+    'Create GridView
     Sub createGridView()
         countFlag = Form2.countFlag
         listColumn = Form2.listColumn
@@ -38,7 +40,7 @@ Public Class Form3
                 count += 1
             Next
 
-
+            'Add Rows
             If countFlag >= listColumn.ElementAt(0).ListColumnAll.Count Then
                 If obj.FlagCaption Then
                     For k As Integer = 1 To listColumn.ElementAt(0).ListColumnAll.Count - 1
@@ -57,10 +59,7 @@ Public Class Form3
             End If
 
 
-
-
-
-
+            'Insert column by column
             For k As Integer = 0 To (obj.countC - 1)
                 Dim errorF As Boolean = False
                 Dim row As Integer = 1
@@ -107,6 +106,7 @@ Public Class Form3
         Next
     End Sub
 
+    'Create Sidebar
     Private Sub createSidebar()
         For Each obj In listCp
             If obj.FlagCaption Then
@@ -121,6 +121,7 @@ Public Class Form3
         TextBox2.Text = Form2.delimiter
     End Sub
 
+    'Create TreeView
     Public Sub createTreeView()
 
         countFlag = Form2.countFlag
@@ -166,6 +167,7 @@ Public Class Form3
         Form1.Close()
     End Sub
 
+    'CheckList: Header
     Private Sub CheckedListBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles CheckedListBox1.MouseClick
         Dim idx, sidx As Integer
         sidx = CheckedListBox1.SelectedIndex
@@ -195,6 +197,7 @@ Public Class Form3
 
     End Sub
 
+    'Change the number of lines
     Private Sub CheckBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles CheckBox1.MouseClick
         If IsNumeric(Me.TextBox1.Text) Then
             Dim countRows As Integer = Me.TextBox1.Text
@@ -215,13 +218,14 @@ Public Class Form3
     End Sub
 
 
-
+    'Extract Metadata
     Private Sub extractMetadata()
         For Each objectC1 In listCp
             Form2.transformRowToColumn(objectC1.Value, objectC1.countC)
         Next
     End Sub
 
+    'Get Data Types
     Private Sub getTypes()
 
         For Each objectG1 In listCp
@@ -268,6 +272,7 @@ Public Class Form3
 
     End Sub
 
+    'Change the delimiter character
     Private Sub CheckBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles CheckBox2.MouseClick
 
         Dim countDelimiter As Char = Me.TextBox2.Text
@@ -281,6 +286,7 @@ Public Class Form3
         createGridView()
     End Sub
 
+    'Select the item of the TreeView
     Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
         If Me.TreeView1.SelectedNode.Text <> Form1.Label4.Text Then
             index = Me.TreeView1.SelectedNode.Index
@@ -289,16 +295,19 @@ Public Class Form3
         End If
     End Sub
 
+    'Oper Average Form
     Private Sub Button1_MouseClick(sender As Object, e As MouseEventArgs) Handles Button1.MouseClick
         Form5.Show()
         Form5.BringToFront()
     End Sub
 
+    'Open Distribution Form
     Private Sub Button2_MouseClick(sender As Object, e As MouseEventArgs) Handles Button2.MouseClick
         Form6.Show()
         Form6.BringToFront()
     End Sub
 
+    'Print GridView into file
     Private Sub Button3_MouseClick(sender As Object, e As MouseEventArgs) Handles Button3.MouseClick
         Dim sfd As New SaveFileDialog()
         sfd.FileName = "Export DataGridView"
@@ -328,6 +337,7 @@ Public Class Form3
 
     End Sub
 
+    'Print data into file
     Private Sub Button4_MouseClick(sender As Object, e As MouseEventArgs) Handles Button4.MouseClick
 
         Dim sfd As New SaveFileDialog()

@@ -1,4 +1,5 @@
-﻿Public Class Form5
+﻿'Form5: Average Calculation
+Public Class Form5
 
     Dim countFlag As Integer
     Dim listColumn As List(Of Form2.listAllColumn)
@@ -17,7 +18,7 @@
         createTreeView()
     End Sub
 
-
+    'Sub Create TreeView
     Private Sub createTreeView()
 
         countFlag = Form2.countFlag
@@ -60,6 +61,7 @@
     End Sub
 
 
+    'Select the item to calculate the average
     Private Sub TreeView1_AfterCheck(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterCheck
 
         For Each ob As TreeNode In TreeView1.Nodes
@@ -126,7 +128,7 @@
 
     End Sub
 
-
+    'Sub: Check if the selected item is a number
     Private Sub chknode(tree As TreeNode)
 
         For Each obj As TreeNode In tree.Nodes
@@ -145,7 +147,7 @@
 
 
                     Else
-                            MessageBox.Show("It must be a number", "Warning")
+                        MessageBox.Show("It must be a number", "Warning")
 
 
                     End If
@@ -157,7 +159,7 @@
 
     End Sub
 
-
+    'Function: check if the data type satisfies
     Private Function checkType()
         Try
             Dim k As Type = Form2.listColumn.ElementAt(order).typeT
@@ -180,6 +182,7 @@
         End Try
     End Function
 
+    'Uncheck All nodes
     Private Sub uncheckNode(tree As TreeNode)
         For Each obj As TreeNode In tree.Nodes
             obj.Checked = False
@@ -192,7 +195,7 @@
         resetCheck()
     End Sub
 
-
+    'Reset All
     Private Sub resetCheck()
         For Each ob As TreeNode In TreeView1.Nodes
             uncheckNode(ob)
@@ -211,7 +214,7 @@
 
     End Sub
 
-
+    'Sub: Kahan Method
     Sub kahanSub(ls As ArrayList)
         sum = 0.0
         c = 0.0

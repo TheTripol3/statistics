@@ -1,4 +1,5 @@
-﻿Public Class Form6
+﻿'Form6: Distribution Calculation
+Public Class Form6
 
     Dim countFlag As Integer
     Dim listColumn As List(Of Form2.listAllColumn)
@@ -24,6 +25,7 @@
     End Sub
 
 
+    'Create TreeView
     Private Sub createTreeView()
 
         countFlag = Form2.countFlag
@@ -66,6 +68,7 @@
     End Sub
 
 
+    'Select the item to calculate the distribution and calculate
     Private Sub TreeView1_AfterCheck(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterCheck
 
         For Each ob As TreeNode In TreeView1.Nodes
@@ -95,7 +98,7 @@
                     Me.RichTextBox1.AppendText(Environment.NewLine & "Method (Kahan) . . ." & Environment.NewLine & Environment.NewLine)
 
 
-
+                    'Discrete
                     If k.ToString = "System.Int32" OrElse k.ToString = "System.Int64" Then
                         flagDistribution = False
                         Dim obj2 As New frequency
@@ -104,6 +107,8 @@
                         Me.RichTextBox1.AppendText(Environment.NewLine)
 
                         obj2.printDistribution(FrequencyDistribution, (listColumn.ElementAt(order).ListColumnAll.Count - 1))
+
+                        'Continuous
                     ElseIf k.ToString = "System.Double" Then
                         flagDistribution = True
                         Dim obj3 As New intervals
@@ -131,6 +136,7 @@
                     Me.Label11.Text = average
                     Me.Button2.Enabled = True
 
+                    'No header
                 Else
 
 
@@ -147,6 +153,7 @@
 
                     Me.RichTextBox1.AppendText(Environment.NewLine & "Method (Kahan) . . ." & Environment.NewLine & Environment.NewLine)
 
+                    'Discrete
                     If k.ToString = "System.Int32" OrElse k.ToString = "System.Int64" Then
                         flagDistribution = False
                         Dim obj2 As New frequency
@@ -156,6 +163,7 @@
 
                         obj2.printDistribution(FrequencyDistribution, listColumn.ElementAt(order).ListColumnAll.Count)
 
+                        'Continuous
                     ElseIf k.ToString = "System.Double" Then
                         flagDistribution = True
                         Dim obj3 As New intervals
@@ -192,7 +200,7 @@
 
     End Sub
 
-
+    'Check the selected item
     Private Sub chknode(tree As TreeNode)
 
         For Each obj As TreeNode In tree.Nodes
@@ -222,7 +230,7 @@
     End Sub
 
 
-
+    'Function: check if the data type satisfies
     Private Function checkType()
         Try
             Dim k As Type = Form2.listColumn.ElementAt(order).typeT
@@ -258,7 +266,7 @@
         resetCheck()
     End Sub
 
-
+    'Reset All
     Private Sub resetCheck()
         For Each ob As TreeNode In TreeView1.Nodes
             uncheckNode(ob)
@@ -280,7 +288,7 @@
 
     End Sub
 
-
+    'Sub: Method Kahan
     Sub kahanSub(ls As ArrayList)
         sum = 0.0
         c = 0.0

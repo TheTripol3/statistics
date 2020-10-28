@@ -1,4 +1,5 @@
-﻿Public Class Form4
+﻿'Form4: Change Type
+Public Class Form4
 
     Dim index As Integer = Form3.index
     Dim types As String
@@ -8,15 +9,17 @@
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim indexVariable As String = Form2.listCp.ElementAt(0).Lists.ElementAt(index)
-            Dim indexRadio As String = Form2.listColumn.ElementAt(index).typeT.ToString
+        Dim indexRadio As String = Form2.listColumn.ElementAt(index).typeT.ToString
 
-            initial(indexRadio, indexVariable)
+        initial(indexRadio, indexVariable)
 
 
 
     End Sub
 
     Private Sub CheckedListBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles CheckedListBox1.MouseClick
+
+        'Only one choice
         Dim idx, sidx As Integer
         sidx = CheckedListBox1.SelectedIndex
         For idx = 0 To CheckedListBox1.Items.Count - 1
@@ -29,6 +32,8 @@
 
     End Sub
 
+
+    'Sub Only one choice
     Private Sub initial(index As String, stringS As String)
 
         Select Case index
@@ -83,7 +88,7 @@
 
     End Sub
 
-
+    'Save Info after the Test
     Private Sub Button1_MouseClick(sender As Object, e As MouseEventArgs) Handles Button1.MouseClick
 
         Form2.listCp.ElementAt(0).Lists(index) = names
@@ -132,6 +137,7 @@
         Me.Close()
     End Sub
 
+    'Sub Test: check if the data type satisfies
     Private Sub Button2_MouseClick(sender As Object, e As MouseEventArgs) Handles Button2.MouseClick
 
 

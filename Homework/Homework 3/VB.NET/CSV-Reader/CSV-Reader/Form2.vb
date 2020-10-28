@@ -1,4 +1,5 @@
-﻿Public Class Form2
+﻿'Form 2 Initial Setup
+Public Class Form2
 
 
     Public listCp As New List(Of listCaption)
@@ -32,19 +33,24 @@
 
     End Sub
 
-
+    'Flag: File
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
         Select Case ComboBox1.SelectedItem.ToString()
+            'Open File
             Case "Open File"
                 resetListFlag()
                 resetData()
                 Me.Hide()
                 Form1.Show()
+
+            'Reset File
             Case "Reset File"
                 resetListFlag()
                 resetData()
                 MessageBox.Show("Done!", "Reset")
+
+            'Close File
             Case "Exit File"
                 Form1.Close()
             Case Else
@@ -55,6 +61,7 @@
 
     End Sub
 
+    'Sub Data Reset
     Public Sub resetData()
         listCp.Clear()
         listColumn.Clear()
@@ -65,20 +72,22 @@
         Me.ComboBox3.Text = "Flag Info"
         Me.ComboBox4.Text = "Preview"
 
-
-
         Me.RichTextBox1.AppendText("File type (" & extn & ")" & Environment.NewLine)
     End Sub
 
 
+    'Flag: Analyze
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
 
         Select Case ComboBox2.SelectedItem.ToString()
+
+            'Check the delimiter character
             Case "Check Delimiter"
                 resetData()
                 checkDelimeters()
                 ListFlag(0) = True
 
+            'Get file information
             Case "Get Information"
                 If checkListFlag(1) Then
                     Me.TreeView1.Nodes.Clear()
@@ -91,6 +100,7 @@
 
                 End If
 
+            'Check Headers
             Case "Get Header"
                 If checkListFlag(2) Then
                     dict.Clear()
@@ -99,7 +109,7 @@
                 End If
 
 
-
+            'Get metadata
             Case "Get Metadata"
                 If checkListFlag(3) Then
                     listColumn.Clear()
@@ -108,6 +118,7 @@
                     ListFlag(3) = True
                 End If
 
+            'Get Data Types
             Case "Get Types"
                 If checkListFlag(4) Then
                     dict.Clear()
@@ -123,10 +134,11 @@
 
     End Sub
 
-
+    'Flag: Flag Info
     Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
 
         Select Case ComboBox3.SelectedItem.ToString()
+            'Add or delete first row
             Case "Header Flag"
                 If checkListFlag(5) Then
                     flagCaptioCheck()
@@ -135,6 +147,7 @@
                     ListFlag(5) = True
                 End If
 
+            'Total rows to extract
             Case "Count Flag"
                 If checkListFlag(6) Then
                     flagCountDimension()
@@ -148,9 +161,11 @@
     End Sub
 
 
+    'Flag: Preview
     Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
 
         Select Case ComboBox4.SelectedItem.ToString()
+            'View Data after Initial Setup
             Case "View"
                 If checkListFlag(7) Then
                     Me.Hide()
@@ -184,6 +199,7 @@
         e.Handled = True
     End Sub
 
+    'How many rows do you wanto to extract?
     Private Sub flagCountDimension()
 
         Do
@@ -192,6 +208,7 @@
                 Dim res As String = InputBox("How many rows do you want to select? Write 0 to get all the data",
                                              "Write the number", 10)
 
+                'If rows = 0, put the maximum of the elements of the rows
                 If CInt(res) = 0 Then
                     countFlag = listColumn.ElementAt(0).ListColumnAll.Count
                 Else
@@ -212,7 +229,7 @@
     End Sub
 
 
-
+    'Add or delete the first row
     Private Sub flagCaptioCheck()
         Dim result As DialogResult = MessageBox.Show("Do you delete the first row from the dataset?", "Warning", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
@@ -230,6 +247,7 @@
 
     End Sub
 
+    'Get Data Information
     Private Sub GetInformation()
 
         Me.RichTextBox1.Clear()
@@ -238,6 +256,7 @@
 
         retrieveInformation()
 
+        'Print Information
         For Each objectC In listCp
             Me.RichTextBox1.AppendText("File (" & Form1.Label4.Text & ")" & Environment.NewLine)
             Me.RichTextBox1.AppendText("Total Data (" & objectC.countD.ToString & ")" & Environment.NewLine)
@@ -254,7 +273,7 @@
 
     End Sub
 
-
+    'Check and get Headers
     Private Sub getHeader()
 
         Me.TreeView1.Nodes.Clear()
@@ -270,7 +289,7 @@
 
             If result = DialogResult.Yes Then
 
-
+                'Allow the user to write the name of the headers
             ElseIf result = DialogResult.No Then
 
                 For k As Integer = 0 To (pList.Lists.Count - 1)
@@ -290,6 +309,7 @@
 
         Next
 
+        'Print Headers
         Me.RichTextBox1.AppendText(Environment.NewLine & "Header . . ." & Environment.NewLine)
         For Each pList In listCp
             For Each varCap In pList.Lists
@@ -299,12 +319,16 @@
         Next
     End Sub
 
+
+    'Extract Metadata
     Private Sub extractMetadata()
 
         Me.RichTextBox1.AppendText(Environment.NewLine & "Get Metadata . . ." & Environment.NewLine)
 
+        'Clear TreeView
         Me.TreeView1.Nodes.Clear()
 
+        'Root = Name File
         Dim root = New TreeNode(Form1.Label4.Text)
         Me.TreeView1.Nodes.Add(root)
 
@@ -312,11 +336,12 @@
 
             transformRowToColumn(objectC1.Value, objectC1.countC)
 
+            'In this step, there are no data types
             Dim countNode As Integer = 0
             Dim typeV As String = "ND"
 
 
-
+            'Extract variables and 4 elements of each column, and to draw TreeView
             For Each objectC2 In listColumn
 
                 Dim flagCount As Integer = 0
@@ -333,7 +358,7 @@
                     If (objectC1.FlagCaption) Then
 
                         If flagCount <> 0 Then
-                            If (flagCount = 4) Then
+                            If (flagCount = 7) Then
                                 Exit For
                             Else
                                 TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
@@ -341,7 +366,7 @@
                         End If
 
                     Else
-                        If (flagCount = 4) Then
+                        If (flagCount = 7) Then
                             Exit For
                         Else
                             TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
@@ -361,11 +386,13 @@
     End Sub
 
 
-
+    'Check Data Types
     Private Sub computeTreeView()
 
+        'Clear TreeView
         Me.TreeView1.Nodes.Clear()
 
+        'Root = Name File
         Dim root = New TreeNode(Form1.Label4.Text)
         Me.TreeView1.Nodes.Add(root)
 
@@ -377,6 +404,7 @@
                 Dim flagCount As Integer = 0
                 Dim typeV As String
 
+                'If there are no data types = ND, otherwise print
                 If objectC2.typeT = Nothing Then
                     typeV = "ND"
                 Else
@@ -396,7 +424,7 @@
 
                         If flagCount <> 0 Then
 
-                            If (flagCount = 4) Then
+                            If (flagCount = 7) Then
                                 Exit For
                             Else
                                 TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
@@ -405,7 +433,7 @@
                         End If
 
                     Else
-                        If (flagCount = 4) Then
+                        If (flagCount = 7) Then
                             Exit For
                         Else
                             TreeView1.Nodes(0).Nodes(countNode).Nodes.Add(New TreeNode(objectC3))
@@ -423,6 +451,7 @@
 
     End Sub
 
+    'Retrieve Data Information (split and store)
     Public Sub retrieveInformation()
         Using MyReader As New FileIO.TextFieldParser(Form1.Label4.Text)
             MyReader.TextFieldType = FileIO.FieldType.Delimited
@@ -485,7 +514,7 @@
 
     End Sub
 
-
+    'Get Data Types
     Private Sub getTypes()
 
         Me.RichTextBox1.AppendText(Environment.NewLine & "Get Types . . ." & Environment.NewLine)
@@ -525,7 +554,7 @@
 
     End Sub
 
-
+    'Sub: Dictionary containing how many types of data it checked
     Public Sub updateInfoParse(obj As listAllColumn)
 
         dict.Clear()
@@ -538,14 +567,14 @@
         dict.Add("String", countString)
 
         dict = dict.OrderBy(Function(x) x.Value).ToDictionary(Function(x) x.Key, Function(x) x.Value)
-        checkType(dict.Keys.Last, obj)
+        checkType(dict.Keys.Last, dict.Values(1), obj)
 
     End Sub
 
 
 
-
-    Private Sub checkType(str As String, obj As listAllColumn)
+    'Sub: Checks what kind of data an element is
+    Private Sub checkType(str As String, t As Integer, obj As listAllColumn)
 
         Dim stringText As String = "file"
         Dim booleanText As Boolean = True
@@ -556,24 +585,48 @@
 
         Select Case str
             Case "Boolean"
-                obj.typeT = booleanText.GetType()
+                If t = 0 Then
+                    obj.typeT = booleanText.GetType()
+                Else
+                    obj.typeT = stringText.GetType()
+                End If
+
             Case "Int32"
-                obj.typeT = integerText.GetType()
+                If t = 0 Then
+                    obj.typeT = integerText.GetType()
+                Else
+                    obj.typeT = stringText.GetType()
+                End If
+
             Case "Int64"
-                obj.typeT = longText.GetType()
+                If t = 0 Then
+                    obj.typeT = longText.GetType()
+                Else
+                    obj.typeT = stringText.GetType()
+                End If
+
             Case "Double"
-                obj.typeT = doubleText.GetType()
+                If t = 0 Then
+                    obj.typeT = doubleText.GetType()
+                Else
+                    obj.typeT = stringText.GetType()
+                End If
+
             Case "DateTime"
-                obj.typeT = dateText.GetType()
+                If t = 0 Then
+                    obj.typeT = dateText.GetType()
+                Else
+                    obj.typeT = stringText.GetType()
+                End If
+
             Case Else
                 obj.typeT = stringText.GetType()
-
         End Select
 
 
     End Sub
 
-
+    'Sub: Increment a variable to know which type of data is most present
     Public Sub updateCountParse(result As Integer)
 
         Select Case result
@@ -599,7 +652,7 @@
         'MessageBox.Show(TreeView1.SelectedNode.Text)
     End Sub
 
-
+    'Sub: Transform Rows to Columns
     Sub transformRowToColumn(ListData As List(Of listAllRow), numberColumn As Integer)
 
 
@@ -619,7 +672,7 @@
 
     End Sub
 
-
+    'Enum containing the default data types
     Enum dataType
         System_Boolean = 0
         System_Integer = 1
@@ -629,6 +682,8 @@
         System_String = 5
     End Enum
 
+
+    'Function: Data Parse to check the type
     Public Function ParseString(ByVal str As String)
         Dim boolValue As Boolean
         Dim intValue As Integer
@@ -652,6 +707,7 @@
     End Function
 
 
+    'Check delimiters
     Private Sub checkDelimeters()
 
         Dim row0 As String = ""
@@ -704,6 +760,8 @@
         If result = DialogResult.Yes Then
 
             Me.RichTextBox1.AppendText("The delimiter character (" & delimiter & ")" & Environment.NewLine & Environment.NewLine)
+
+            'Allow the user to write the dilimiter character
         ElseIf result = DialogResult.No Then
             Dim res As String = InputBox("What is the character?",
                                                      "", "Write the delimiter character")
@@ -717,7 +775,7 @@
 
     End Sub
 
-
+    'Sub Reset List
     Private Sub resetListFlag()
         ListFlag.Clear()
         ListFlag.Add(False)
@@ -729,6 +787,7 @@
         ListFlag.Add(False)
     End Sub
 
+    'check the Initial Setup step
     Function checkListFlag(ind As Integer)
 
         If ListFlag(ind - 1) Then
@@ -751,6 +810,7 @@
     End Function
 
 
+    'Print the previous step 
     Private Sub printFlag(ind As Integer)
         Select Case ind
             Case 0
