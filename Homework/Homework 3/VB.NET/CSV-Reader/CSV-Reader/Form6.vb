@@ -1,4 +1,6 @@
 ﻿'Form6: Distribution Calculation
+Imports System.Globalization
+
 Public Class Form6
 
     Dim countFlag As Integer
@@ -89,7 +91,7 @@ Public Class Form6
                     Dim arrT As ArrayList = New ArrayList()
 
                     For s As Integer = 1 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
-                        Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k)
+                        Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
                         arrT.Add(a)
                     Next
 
@@ -145,7 +147,7 @@ Public Class Form6
                     Dim arrT As ArrayList = New ArrayList()
 
                     For s As Integer = 0 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
-                        Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k)
+                        Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
                         arrT.Add(a)
                     Next
 
@@ -237,13 +239,13 @@ Public Class Form6
             If listCp(0).FlagCaption Then
 
                 For s As Integer = 1 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
-                    Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k)
+                    Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
                 Next
 
             Else
 
                 For s As Integer = 0 To (listColumn.ElementAt(order).ListColumnAll.Count - 1)
-                    Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k)
+                    Dim a = Convert.ChangeType(listColumn.ElementAt(order).ListColumnAll.ElementAt(s), k, CultureInfo.InvariantCulture)
                 Next
             End If
 

@@ -1,4 +1,5 @@
 ﻿'Form3: DataView
+Imports System.Globalization
 Imports System.IO
 
 Public Class Form3
@@ -73,8 +74,9 @@ Public Class Form3
 
                     If obj.FlagCaption Then
                         Try
+
                             Me.DataGridView1.Rows(row - 1).Cells(k).Style.BackColor = DefaultBackColor()
-                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = Convert.ChangeType(listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString, types)
+                            Me.DataGridView1.Rows(row - 1).Cells(k).Value = Convert.ChangeType(listColumn.ElementAt(k).ListColumnAll.ElementAt(j + 1).ToString, types, CultureInfo.InvariantCulture)
 
                         Catch ex As Exception
                             If (j <> listColumn.ElementAt(k).ListColumnAll.Count - 1) Then
@@ -87,7 +89,7 @@ Public Class Form3
                     Else
                         Try
                             Me.DataGridView1.Rows(j).Cells(k).Style.BackColor = DefaultBackColor()
-                            Me.DataGridView1.Rows(j).Cells(k).Value = Convert.ChangeType(listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString, types)
+                            Me.DataGridView1.Rows(j).Cells(k).Value = Convert.ChangeType(listColumn.ElementAt(k).ListColumnAll.ElementAt(j).ToString, types, CultureInfo.InvariantCulture)
                         Catch ex As Exception
                             If (j <> listColumn.ElementAt(k).ListColumnAll.Count - 1) Then
                                 errorF = True

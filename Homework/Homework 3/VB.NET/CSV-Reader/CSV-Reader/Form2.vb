@@ -495,9 +495,9 @@ Public Class Form2
 
                     listCap.Value.Add(listData)
 
-                Catch ex As FileIO.MalformedLineException
-                    MsgBox("Line " & ex.Message &
-                    "is not valid and will be skipped.")
+                Catch ex As Exception
+                    MessageBox.Show("The delimiter character(" & delimiter & ") is not present on all rows", "Error")
+                    Exit Sub
                 End Try
 
             End While
