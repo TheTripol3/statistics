@@ -455,7 +455,7 @@ Public Class Form2
     Public Sub retrieveInformation()
         Using MyReader As New FileIO.TextFieldParser(Form1.Label4.Text)
             MyReader.TextFieldType = FileIO.FieldType.Delimited
-            MyReader.SetDelimiters(delimiter)
+            MyReader.Delimiters = New String() {delimiter}
 
             Dim currentRow As String()
             Dim countRow As Integer = 0
@@ -467,6 +467,7 @@ Public Class Form2
             Dim listVariable As New List(Of String)
             Dim listValue As New List(Of String)
             Dim listCap As New listCaption
+
 
             While Not MyReader.EndOfData
 
