@@ -170,6 +170,8 @@ Public Class Form11
                 Dim percentFreq As Double = Math.Round((90 * (frequency / Form8.ListVariables(0).Count) * 100) / 100, 2)
 
 
+
+
                 Dim X1_Line As Single = Me.X_ViewPort(drawColumn * Math.Truncate(ViewPort.Width / (countIntervalRow + 1)), ViewPort, MinX_windows, RangeX)
                 Dim Y1_Line As Single = Me.Y_ViewPort(drawRow * size, ViewPort, MinY_windows, RangeY)
 
@@ -182,8 +184,8 @@ Public Class Form11
 
 
                 Dim positionX As Single = Me.X_ViewPort(drawColumn * Math.Truncate(ViewPort.Width / (countIntervalRow + 1)), ViewPort, MinX_windows, RangeX)
-                Dim positionY As Single = Me.Y_ViewPort(percentFreq - 115, ViewPort, MinY_windows, RangeY)
-                Dim heightRect As Single = Me.Y_ViewPort(percentFreq - 115, ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(-4 * size, ViewPort, MinY_windows, RangeY)
+                Dim positionY As Single = Me.Y_ViewPort(percentFreq - 120, ViewPort, MinY_windows, RangeY)
+                Dim heightRect As Single = Me.Y_ViewPort(percentFreq - 120, ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(-4 * size, ViewPort, MinY_windows, RangeY)
                 Dim sizeRect As Single = Me.X_ViewPort((drawColumn + 1) * Math.Truncate(ViewPort.Width / (countIntervalRow + 1)), ViewPort, MinX_windows, RangeX) -
                                             Me.X_ViewPort((drawColumn) * Math.Truncate(ViewPort.Width / (countIntervalRow + 1)), ViewPort, MinX_windows, RangeX)
 
@@ -192,7 +194,18 @@ Public Class Form11
                 g.FillRectangle(semiBrushYellow, positionX, positionY, sizeRect, Math.Abs(heightRect))
 
 
+                Dim average As Double = calculateMain(Interval, Form8.listX)
+                If average > 0 Then
 
+
+                    Dim Y1_MeanX As Single = Me.Y_ViewPort(-4, ViewPort, MinY_windows, RangeY)
+
+                    Dim X1_Mean1 As Single = Me.X_ViewPort(average - Interval.lowerPoint, ViewPort, MinX_windows, RangeX)
+                    Dim X1_Mean2 As Single = X1_Line + X1_Mean1
+
+                    Dim Y2_MeanX As Single = Me.Y_ViewPort(-4 * size, ViewPort, MinY_windows, RangeY)
+                    g.DrawLine(Pens.Green, X1_Mean2, Y1_MeanX, X1_Mean2, Y2_MeanX)
+                End If
 
                 If countIntervalRow < 8 Then
 
@@ -263,7 +276,7 @@ Public Class Form11
                 Dim heightRect As Single = Me.Y_ViewPort(drawRow * Math.Truncate(ViewPort.Height / (countIntervalColumn + 1)), ViewPort, MinY_windows, RangeY) -
                     Me.Y_ViewPort((drawRow - 1) * Math.Truncate(ViewPort.Height / (countIntervalColumn + 1)), ViewPort, MinY_windows, RangeY)
 
-                Dim sizeRect As Single = percentFreq + 5
+                Dim sizeRect As Single = percentFreq
 
                 g.DrawRectangle(semiBlackBorder, positionX, positionY, sizeRect, Math.Abs(heightRect))
                 g.FillRectangle(semiBrushOrange, positionX, positionY, sizeRect, Math.Abs(heightRect))
@@ -280,6 +293,23 @@ Public Class Form11
                     Dim rect1 = New Rectangle(X_Text - 140, Y_Text, 140, Math.Abs(heightRect))
                     g.DrawString(("(" & Interval.lowerPoint & "  -  " & Interval.upperPoint & " ]") & Environment.NewLine & frequency.ToString, SmallFont, Brushes.Black, rect1, text)
                 End If
+
+
+                Dim average As Double = calculateMain(Interval, Form8.listY)
+                If average > 0 Then
+
+                    Dim X1_LineY As Single = Me.X_ViewPort(drawColumn * size, ViewPort, MinX_windows, RangeX)
+                    Dim Y1_Line3 As Single = Me.Y_ViewPort((average - minY) / sizeIntervalY * ViewPort.Height / (countIntervalColumn + 1), ViewPort, MinY_windows, RangeY)
+                    Dim X2_LineY As Single = Me.X_ViewPort(-5, ViewPort, MinX_windows, RangeX)
+
+                    Dim Y_Device As Single = Me.Y_ViewPort((average - Interval.lowerPoint) / sizeIntervalY * (ViewPort.Height / (countIntervalColumn + 1)), ViewPort, MinY_windows, RangeY)
+
+                    g.DrawLine(Pens.Violet, X1_Line, Y1_Line3, X2_LineY, Y1_Line3)
+
+
+
+                End If
+
 
 
                 drawRow += 1
@@ -304,6 +334,12 @@ Public Class Form11
 
 
 
+
+
+
+
+
+
         'Me.RichTextBox1.AppendText("minX  " & minX & "  " & "minY  " & minY & Environment.NewLine)
         'Me.RichTextBox1.AppendText("intX  " & sizeIntervalX & "  " & "intY  " & sizeIntervalY & Environment.NewLine & Environment.NewLine)
 
@@ -325,5 +361,44 @@ Public Class Form11
 
     End Sub
 
+
+
+    Private Function calculateMain(interval As intervals, listV As List(Of Double)) As Double
+
+        Dim count = 0
+        Dim arrT As ArrayList = New ArrayList()
+        For Each variable In listV
+
+            If (variable > interval.lowerPoint) AndAlso (variable <= interval.upperPoint) Then
+                arrT.Add(variable)
+                count += 1
+            End If
+        Next
+
+        Dim av = kahanSub(arrT)
+
+        Return av
+
+    End Function
+
+
+    Private Function kahanSub(ls As ArrayList)
+        Dim sum = 0.0
+        Dim c = 0.0
+        Dim count = 0
+
+
+        For i As Integer = 0 To (ls.Count - 1)
+            Dim y = ls(i) - c
+            Dim t = sum + y
+            c = (t - sum) - y
+            sum = t
+            count += 1
+        Next
+
+        Dim average = sum / count
+
+        Return average
+    End Function
 
 End Class

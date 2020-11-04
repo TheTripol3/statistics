@@ -21,8 +21,8 @@ Public Class Form8
 
 
     'Distribution
-    Dim listX As New List(Of Double)
-    Dim listY As New List(Of Double)
+    Public listX As New List(Of Double)
+    Public listY As New List(Of Double)
     Public listInt As New List(Of DataPoint_Numeric)
     Dim countN As Integer
     'Public scatter As New scatterPlot

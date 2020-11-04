@@ -25,7 +25,9 @@ Public Class Form3
 
 
     Public Sub initialize()
+
         countFlag = 10
+
         checkDelimeters()
         retrieveInformation()
         extractMetadata()
