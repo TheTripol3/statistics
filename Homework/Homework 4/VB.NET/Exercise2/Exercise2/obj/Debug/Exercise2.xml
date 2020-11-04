@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Exercise2
+</name>
+</assembly>
+<members>
+<member name="T:Exercise2.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Exercise2.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Exercise2.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Exercise2.My.Resources.Resource1">
+<summary>
+  Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
+</summary>
+</member>
+<member name="P:Exercise2.My.Resources.Resource1.ResourceManager">
+<summary>
+  Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+</summary>
+</member>
+<member name="P:Exercise2.My.Resources.Resource1.Culture">
+<summary>
+  Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte le
+  ricerche di risorse eseguite utilizzando questa classe di risorse fortemente tipizzata.
+</summary>
+</member>
+<member name="P:Exercise2.My.Resources.Resource1.StopList_Ita">
+<summary>
+  Cerca una stringa localizzata simile a 
+ | An Italian stop word list. Comments begin with vertical bar. Each stop
+ | word is at the start of a line.
+
+ad             |  a (to) before vowel
+al             |  a + il
+allo           |  a + lo
+ai             |  a + i
+agli           |  a + gli
+all            |  a + l&apos;
+agl            |  a + gl&apos;
+alla           |  a + la
+alle           |  a + le
+con            |  with
+col            |  con + il
+coi            |  con + i (forms collo, cogli etc are now very rare)
+da             |  from
+dal [stringa troncata]&quot;;.
+</summary>
+</member>
+</members>
+</doc>
