@@ -38,13 +38,6 @@ Public Class Form11
 
 
 
-    Public MinX_Windows_At_Mouse_Down As Double
-    Public MaxX_Windows_At_Mouse_Down As Double
-    Public MinY_Windows_At_Mouse_Down As Double
-    Public MaxY_Windows_At_Mouse_Down As Double
-    Public RangeX_Windows_At_Mouse_Down As Double
-    Public RangeY_Windows_At_Mouse_Down As Double
-
     Public sizeIntervalX As Double = Form8.sizeIntervalX
     Public sizeIntervalY As Double = Form8.sizeIntervalY
 
@@ -141,7 +134,7 @@ Public Class Form11
                 If s = -4 Then
 
                     'x1 y1 top
-                    Dim Y1_Line As Single = Me.Y_ViewPort(MaxY_windows + (size / 2), ViewPort, MinY_windows, RangeY)
+                    Dim Y1_Line As Single = Me.Y_ViewPort(ViewPort.Height + (size / 2), ViewPort, MinY_windows, RangeY)
 
                     Dim X_Line As Single = Me.X_ViewPort(drawColumn * size, ViewPort, MinX_windows, RangeX)
                     Dim Y2_Line As Single = Me.Y_ViewPort(drawRow * size - (size / 2), ViewPort, MinY_windows, RangeY)
@@ -176,7 +169,7 @@ Public Class Form11
                 Dim Y1_Line As Single = Me.Y_ViewPort(drawRow * size, ViewPort, MinY_windows, RangeY)
 
                 Dim X2_Line As Single = Me.X_ViewPort(drawColumn * Math.Truncate(ViewPort.Width / (countIntervalRow + 1)), ViewPort, MinX_windows, RangeX)
-                Dim Y2_Line As Single = Me.Y_ViewPort(MaxY_windows + (size / 2), ViewPort, MinY_windows, RangeY)
+                Dim Y2_Line As Single = Me.Y_ViewPort(ViewPort.Height + (size / 2), ViewPort, MinY_windows, RangeY)
                 g.DrawLine(semiBlackPen, X1_Line, Y1_Line, X2_Line, Y2_Line)
 
 
@@ -200,11 +193,12 @@ Public Class Form11
 
                     Dim Y1_MeanX As Single = Me.Y_ViewPort(-4, ViewPort, MinY_windows, RangeY)
 
-                    Dim X1_Mean1 As Single = Me.X_ViewPort(average - Interval.lowerPoint, ViewPort, MinX_windows, RangeX)
-                    Dim X1_Mean2 As Single = X1_Line + X1_Mean1
+                    Dim X1_LineMean As Single = Me.X_ViewPort((average - minX) / sizeIntervalX * ViewPort.Width / (countIntervalRow + 1), ViewPort, MinX_windows, RangeX)
+
+                    'Dim X1_Mean2 As Single = Me.X_ViewPort(X2_Line - X1_Mean1, ViewPort, MinX_windows, RangeX)
 
                     Dim Y2_MeanX As Single = Me.Y_ViewPort(-4 * size, ViewPort, MinY_windows, RangeY)
-                    g.DrawLine(Pens.Green, X1_Mean2, Y1_MeanX, X1_Mean2, Y2_MeanX)
+                    g.DrawLine(Pens.Green, X1_LineMean, Y1_MeanX, X1_LineMean, Y2_MeanX)
                 End If
 
                 If countIntervalRow < 8 Then
@@ -240,7 +234,7 @@ Public Class Form11
                     'x1 left
                     Dim X1_Line As Single = Me.X_ViewPort(drawColumn * size - (size / 2), ViewPort, MinX_windows, RangeX)
                     Dim Y1_Line As Single = Me.Y_ViewPort(drawRow * size, ViewPort, MinY_windows, RangeY)
-                    Dim X2_Line As Single = Me.X_ViewPort(MaxX_windows + (size / 2), ViewPort, MinX_windows, RangeX)
+                    Dim X2_Line As Single = Me.X_ViewPort(ViewPort.Width + (size / 2), ViewPort, MinX_windows, RangeX)
 
                     g.DrawLine(BlackPen, X1_Line, Y1_Line, X2_Line, Y1_Line)
 
@@ -265,7 +259,7 @@ Public Class Form11
 
                 Dim X1_Line As Single = Me.X_ViewPort(drawColumn * size, ViewPort, MinX_windows, RangeX)
                 Dim Y1_Line As Single = Me.Y_ViewPort(drawRow * Math.Truncate(ViewPort.Height / (countIntervalColumn + 1)), ViewPort, MinY_windows, RangeY)
-                Dim X2_Line As Single = Me.X_ViewPort(MaxX_windows + (size / 2), ViewPort, MinX_windows, RangeX)
+                Dim X2_Line As Single = Me.X_ViewPort(ViewPort.Width + (size / 2), ViewPort, MinX_windows, RangeX)
 
                 g.DrawLine(semiBlackPen, X1_Line, Y1_Line, X2_Line, Y1_Line)
 
@@ -321,7 +315,7 @@ Public Class Form11
 
 
 
-        Dim Y1_LineMeanX As Single = Me.Y_ViewPort(MaxY_windows + (size / 2), ViewPort, MinY_windows, RangeY)
+        Dim Y1_LineMeanX As Single = Me.Y_ViewPort(ViewPort.Height + (size / 2), ViewPort, MinY_windows, RangeY)
         Dim X1_LineMeanX As Single = Me.X_ViewPort((averageX - minX) / sizeIntervalX * ViewPort.Width / (countIntervalRow + 1), ViewPort, MinX_windows, RangeX)
         Dim Y2_LineMeanX As Single = Me.Y_ViewPort(-4 * size, ViewPort, MinY_windows, RangeY)
         g.DrawLine(Pens.Red, X1_LineMeanX, Y1_LineMeanX, X1_LineMeanX, Y2_LineMeanX)
@@ -329,7 +323,7 @@ Public Class Form11
 
         Dim X1_Line2 As Single = Me.X_ViewPort(drawColumn * size, ViewPort, MinX_windows, RangeX)
         Dim Y1_Line2 As Single = Me.Y_ViewPort((averageY - minY) / sizeIntervalY * ViewPort.Height / (countIntervalColumn + 1), ViewPort, MinY_windows, RangeY)
-        Dim X2_Line2 As Single = Me.X_ViewPort(MaxX_windows + (size / 2), ViewPort, MinX_windows, RangeX)
+        Dim X2_Line2 As Single = Me.X_ViewPort(ViewPort.Width + (size / 2), ViewPort, MinX_windows, RangeX)
         g.DrawLine(Pens.Red, X1_Line2, Y1_Line2, X2_Line2, Y1_Line2)
 
 
@@ -401,4 +395,185 @@ Public Class Form11
         Return average
     End Function
 
+
+    Private Viewport_At_Mouse_Down As Rectangle
+    Private MouseLocation_At_MouseDown As Point
+    Private Dragging_Started As Boolean
+    Private Resizing_Started As Boolean
+
+    Public MinX_Window_At_Mouse_Down As Double
+    Public MaxX_Window_At_Mouse_Down As Double
+    Public MinY_Window_At_Mouse_Down As Double
+    Public MaxY_Window_At_Mouse_Down As Double
+    Public RangeX_At_Mouse_Down As Double
+    Public RangeY_At_Mouse_Down As Double
+
+
+
+
+
+    Private Sub PictureBox1_MouseWheel(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseWheel
+
+        Dim Change_X As Integer = Me.ViewPort.Width / 10
+
+        'To maintein same aspect
+        Dim Change_Y As Integer = CInt(Me.ViewPort.Height * Change_X / Me.ViewPort.Width)
+
+        If ModifierKeys.HasFlag(Keys.Control) Then
+
+            'Dim RealWorldChange_X As Double = Me.RangeX_At_Mouse_Down * Change_X / Me.ViewPort.Width
+
+            'Dim RealWorldChange_Y As Double = Me.RangeY * RealWorldChange_X / Me.RangeX
+
+
+            'If e.Delta > 0 Then
+
+            '    Me.MinX_windows -= RealWorldChange_X
+            '    Me.RangeX += 2 * RealWorldChange_X
+
+            '    Me.MinY_windows -= RealWorldChange_Y
+            '    Me.RangeY += 2 * RealWorldChange_Y
+
+            '    Me.DrawScene(dictXF, dictYF, listPointF)
+
+
+            'ElseIf e.Delta < 0 Then
+            '    Me.MinX_windows += RealWorldChange_X
+            '    Me.RangeX -= 2 * RealWorldChange_X
+
+            '    Me.MinY_windows += RealWorldChange_Y
+            '    Me.RangeY -= 2 * RealWorldChange_Y
+
+            '    Me.DrawScene(dictXF, dictYF, listPointF)
+
+
+            'End If
+
+        Else
+
+            If e.Delta > 0 Then
+                Me.ViewPort.X -= Change_X
+                Me.ViewPort.Width += 2 * Change_X
+
+                Me.ViewPort.Y -= Change_Y
+                Me.ViewPort.Height += 2 * Change_Y
+
+                Me.DrawScene(dictXF, dictYF, listPointF)
+
+            ElseIf e.Delta < 0 Then
+                Me.ViewPort.X += Change_X
+                Me.ViewPort.Width -= 2 * Change_X
+
+                Me.ViewPort.Y += Change_Y
+                Me.ViewPort.Height -= 2 * Change_Y
+
+                Me.DrawScene(dictXF, dictYF, listPointF)
+
+            End If
+
+
+        End If
+
+
+    End Sub
+
+
+
+
+
+    Private Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
+        If Me.Dragging_Started Then
+
+            Dim Delta_X As Integer = e.X - Me.MouseLocation_At_MouseDown.X
+            Dim Delta_Y As Integer = e.Y - Me.MouseLocation_At_MouseDown.Y
+
+            If ModifierKeys.HasFlag(Keys.Control) Then
+                'Dim RealWorldDelta_X As Double = Me.RangeX_At_Mouse_Down * Delta_X / Me.ViewPort.Width
+
+                'Me.MinX_windows = Me.MinX_Window_At_Mouse_Down - RealWorldDelta_X
+                'Me.MaxX_windows = Me.MaxX_Window_At_Mouse_Down - RealWorldDelta_X
+
+
+                'Dim RealWorldDelta_Y As Double = Me.RangeY_At_Mouse_Down * Delta_Y / Me.ViewPort.Height
+
+                'Me.MinY_windows = Me.MinY_Window_At_Mouse_Down - RealWorldDelta_X
+                'Me.MaxY_windows = Me.MaxY_Window_At_Mouse_Down - RealWorldDelta_Y
+
+            Else
+
+                Me.ViewPort.X = Me.Viewport_At_Mouse_Down.X + Delta_X
+                Me.ViewPort.Y = Me.Viewport_At_Mouse_Down.Y + Delta_Y
+
+            End If
+
+
+            'Update of the drawing
+            Me.DrawScene(dictXF, dictYF, listPointF)
+
+
+
+        ElseIf (Me.Resizing_Started) Then
+
+            Dim Delta_X As Integer = e.X - Me.MouseLocation_At_MouseDown.X
+
+            Dim Delta_Y As Integer = e.Y - Me.MouseLocation_At_MouseDown.Y
+
+            If ModifierKeys.HasFlag(Keys.Control) Then
+
+                'Dim RealWorldDelta_X As Double = Me.RangeX_At_Mouse_Down * Delta_X / Me.ViewPort.Width
+
+                'Me.MaxX_windows = Me.MaxX_Window_At_Mouse_Down - RealWorldDelta_X
+
+                'Me.RangeX = Me.RangeX_At_Mouse_Down - RealWorldDelta_X
+
+
+
+                'Dim RealWorldDelta_Y As Double = Me.RangeY_At_Mouse_Down * Delta_Y / Me.ViewPort.Height
+
+                'Me.MinY_windows = Me.MinY_Window_At_Mouse_Down + RealWorldDelta_Y
+
+                'Me.RangeY = Me.RangeY_At_Mouse_Down - RealWorldDelta_Y
+
+
+            Else
+
+                Me.ViewPort.Width = Me.Viewport_At_Mouse_Down.Width + Delta_X
+                Me.ViewPort.Height = Me.Viewport_At_Mouse_Down.Height + Delta_Y
+
+
+            End If
+            Me.DrawScene(dictXF, dictYF, listPointF)
+
+        End If
+        'Update of the drawing
+
+    End Sub
+
+    Private Sub PictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
+        If Me.ViewPort.Contains(e.X, e.Y) Then
+
+            Me.Viewport_At_Mouse_Down = Me.ViewPort
+            Me.MouseLocation_At_MouseDown = New Point(e.X, e.Y)
+
+            If e.Button = Windows.Forms.MouseButtons.Left Then
+
+                Me.Dragging_Started = True
+
+            ElseIf e.Button = Windows.Forms.MouseButtons.Right Then
+
+                Me.Resizing_Started = True
+
+            End If
+
+        End If
+    End Sub
+
+    Private Sub PictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
+        Me.Dragging_Started = False
+        Me.Resizing_Started = False
+    End Sub
+
+    Private Sub PictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox1.MouseEnter
+        Me.PictureBox1.Focus()
+    End Sub
 End Class

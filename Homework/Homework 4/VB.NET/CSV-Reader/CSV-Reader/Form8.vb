@@ -781,7 +781,13 @@ Public Class Form8
         Form10.Close()
         Form11.Close()
         If IsNumeric(Me.TextBox1.Text) Then
-            sizeIntervalX = Convert.ToDouble(Me.TextBox1.Text)
+            If Me.TextBox1.Text > 0 Then
+                sizeIntervalX = Convert.ToDouble(Me.TextBox1.Text)
+            Else
+                sizeIntervalX = Convert.ToDouble(1)
+                Me.TextBox1.Text = sizeIntervalX
+            End If
+
         End If
         If IsNumeric(Me.TextBox2.Text) Then
             startingPointX = Convert.ToDouble(Me.TextBox2.Text)
@@ -790,7 +796,14 @@ Public Class Form8
             startingPointY = Convert.ToDouble(Me.TextBox3.Text)
         End If
         If IsNumeric(Me.TextBox4.Text) Then
-            sizeIntervalY = Convert.ToDouble(Me.TextBox4.Text)
+            If Me.TextBox4.Text > 0 Then
+                sizeIntervalY = Convert.ToDouble(Me.TextBox4.Text)
+            Else
+                sizeIntervalY = Convert.ToDouble(1)
+                Me.TextBox4.Text = sizeIntervalY
+            End If
+
+
         End If
 
         If IsNumeric(Me.TextBox5.Text) Then
