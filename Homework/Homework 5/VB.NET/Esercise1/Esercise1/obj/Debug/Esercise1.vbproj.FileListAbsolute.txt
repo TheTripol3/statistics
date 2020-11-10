@@ -1,0 +1,17 @@
+C:\Users\andre\Desktop\Esercise1\Esercise1\bin\Debug\Esercise1.exe.config
+C:\Users\andre\Desktop\Esercise1\Esercise1\bin\Debug\Esercise1.exe
+C:\Users\andre\Desktop\Esercise1\Esercise1\bin\Debug\Esercise1.pdb
+C:\Users\andre\Desktop\Esercise1\Esercise1\bin\Debug\Esercise1.xml
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.vbprojAssemblyReference.cache
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.Form1.resources
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.Resources.resources
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.vbproj.GenerateResource.cache
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.vbproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.exe
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.xml
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.pdb
+C:\Users\andre\Desktop\Esercise1\Esercise1\bin\Debug\Interop.MSScriptControl.dll
+C:\Users\andre\Desktop\Esercise1\Esercise1\bin\Debug\AxInterop.MSScriptControl.dll
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Interop.MSScriptControl.dll
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\AxInterop.MSScriptControl.dll
+C:\Users\andre\Desktop\Esercise1\Esercise1\obj\Debug\Esercise1.vbproj.ResolveComReference.cache
