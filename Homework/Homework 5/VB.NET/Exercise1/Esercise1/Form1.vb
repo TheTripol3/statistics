@@ -190,7 +190,7 @@ Public Class Form1
         Dim stringFinal As String = equation.Replace("x = ", "")
 
 
-        Dim dY As Double = (b - a) / (2 * numberInterval)
+        Dim dY As Double = (b) / (numberInterval)
 
 
         Dim sum As Double = 0
@@ -313,10 +313,10 @@ Public Class Form1
         Me.PictureBox11.Image = Nothing
         InitializeGraphics()
 
-        TextBox1.Text = 2
+        TextBox1.Text = 0
         TextBox2.Text = 8
         TextBox3.Text = 2
-        RichTextBox1.Text = "x+1"
+        RichTextBox1.Text = "x"
 
         sc.Language = "VBSCRIPT"
 

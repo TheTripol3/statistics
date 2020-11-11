@@ -263,7 +263,6 @@ Partial Class Form1
         '
         Me.TextBox3.Location = New System.Drawing.Point(155, 29)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(53, 20)
         Me.TextBox3.TabIndex = 2
         '
@@ -271,7 +270,6 @@ Partial Class Form1
         '
         Me.TextBox2.Location = New System.Drawing.Point(86, 29)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(53, 20)
         Me.TextBox2.TabIndex = 1
         '
@@ -485,6 +483,7 @@ Partial Class Form1
         Me.RichTextBox4.Location = New System.Drawing.Point(6, 493)
         Me.RichTextBox4.Name = "RichTextBox4"
         Me.RichTextBox4.ReadOnly = True
+        Me.RichTextBox4.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
         Me.RichTextBox4.Size = New System.Drawing.Size(494, 152)
         Me.RichTextBox4.TabIndex = 7
         Me.RichTextBox4.Text = ""
