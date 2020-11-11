@@ -62,7 +62,6 @@ Partial Class Form1
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -411,6 +410,7 @@ Partial Class Form1
         Me.RichTextBox1.Font = New System.Drawing.Font("Lucida Console", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.Location = New System.Drawing.Point(0, 0)
         Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
         Me.RichTextBox1.Size = New System.Drawing.Size(997, 64)
         Me.RichTextBox1.TabIndex = 4
         Me.RichTextBox1.Text = ""
@@ -457,7 +457,6 @@ Partial Class Form1
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.RichTextBox3)
-        Me.Panel11.Controls.Add(Me.Button5)
         Me.Panel11.Controls.Add(Me.RichTextBox4)
         Me.Panel11.Controls.Add(Me.PictureBox12)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
@@ -477,19 +476,6 @@ Partial Class Form1
         Me.RichTextBox3.Size = New System.Drawing.Size(503, 169)
         Me.RichTextBox3.TabIndex = 11
         Me.RichTextBox3.Text = ""
-        '
-        'Button5
-        '
-        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button5.Enabled = False
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(170, 489)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(61, 24)
-        Me.Button5.TabIndex = 10
-        Me.Button5.Text = "Update"
-        Me.Button5.UseVisualStyleBackColor = True
-        Me.Button5.Visible = False
         '
         'RichTextBox4
         '
@@ -536,7 +522,7 @@ Partial Class Form1
         Me.MaximumSize = New System.Drawing.Size(1233, 844)
         Me.MinimumSize = New System.Drawing.Size(1233, 844)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Exercise1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -605,7 +591,6 @@ Partial Class Form1
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
     Friend WithEvents Timer2 As Timer
     Friend WithEvents RichTextBox3 As RichTextBox
 End Class

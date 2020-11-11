@@ -18,7 +18,7 @@ Public Class Form1
     Dim semiBrushYellow As New SolidBrush(Color.FromArgb(90, Color.Yellow))
     Dim semiBrushOrange As New SolidBrush(Color.FromArgb(90, Color.Orange))
     Dim semiBlackPen As New Pen(Color.FromArgb(80, Color.Black), 0.5)
-    Dim j As Integer = 0
+    Dim j As Integer = 2
     Dim l As Double = 0
 
     Dim sc As New MSScriptControl.ScriptControl
@@ -267,8 +267,7 @@ Public Class Form1
         End If
 
         Me.RichTextBox4.AppendText("x = " & stringReplace)
-        Me.Button5.Enabled = True
-        Me.Button5.Visible = True
+
     End Sub
 
 
@@ -335,8 +334,7 @@ Public Class Form1
         Me.PictureBox12.Image = b
         Me.RichTextBox4.Clear()
         Me.RichTextBox3.Clear()
-        Me.Button5.Enabled = False
-        Me.Button5.Visible = False
+
 
     End Sub
 
@@ -589,7 +587,7 @@ Public Class Form1
         If (Timer1.Enabled) Then
             Timer1.Stop()
             Button3.Text = "Start Timer"
-            j = 0
+            j = 2
         Else
             Timer1.Start()
             Button3.Text = "Stop Timer"
@@ -635,12 +633,10 @@ Public Class Form1
             Me.RichTextBox2.AppendText("Write an equation!")
         End If
 
-        j += 1
+        j += 2
     End Sub
 
     Private Sub Button2_MouseClick(sender As Object, e As MouseEventArgs) Handles Button2.MouseClick
-        Me.Button5.Enabled = False
-        Me.Button5.Visible = False
         Me.RichTextBox4.Clear()
         g.Clear(Color.White)
         Me.PictureBox12.Image = b
@@ -648,12 +644,14 @@ Public Class Form1
         If RichTextBox1.Text <> "" Then
             Dim equation = RichTextBox1.Text.Trim
             If IsNumeric(TextBox1.Text) Then
-                'Dim a = TextBox1.Text
+                Dim a = TextBox1.Text
                 If IsNumeric(TextBox2.Text) Then
-                    'Dim b = TextBox2.Text
+                    Dim b = TextBox2.Text
                     If IsNumeric(TextBox3.Text) Then
-                        'Dim N = CDbl(TextBox3.Text)
+                        Dim N = CDbl(TextBox3.Text)
                         checkInverese(equation)
+                        Dim equationF = RichTextBox4.Text.Trim
+                        calculationLebesgueDefinite(CDbl(a), CDbl(b), equationF, N, 0)
                     Else
                         Me.RichTextBox2.AppendText("Choose N")
                     End If
@@ -668,32 +666,32 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button5_MouseClick(sender As Object, e As MouseEventArgs) Handles Button5.MouseClick
-        Me.Button5.Enabled = False
-        Me.Button5.Visible = False
+    'Private Sub Button5_MouseClick(sender As Object, e As MouseEventArgs) Handles Button5.MouseClick
+    '    Me.Button5.Enabled = False
+    '    Me.Button5.Visible = False
 
-        If RichTextBox4.Text <> "" Then
-            Dim equation = RichTextBox4.Text.Trim
-            If IsNumeric(TextBox1.Text) Then
-                Dim a = TextBox1.Text
-                If IsNumeric(TextBox2.Text) Then
-                    Dim b = TextBox2.Text
-                    If IsNumeric(TextBox3.Text) Then
-                        Dim N = CDbl(TextBox3.Text)
-                        calculationLebesgueDefinite(CDbl(a), CDbl(b), equation, N, 0)
-                    Else
-                        Me.RichTextBox3.AppendText("Choose N")
-                    End If
-                Else
-                    Me.RichTextBox3.AppendText("Choose B")
-                End If
-            Else
-                Me.RichTextBox3.AppendText("Choose A")
-            End If
-        Else
-            Me.RichTextBox3.AppendText("Write an equation!")
-        End If
-    End Sub
+    '    If RichTextBox4.Text <> "" Then
+    '        Dim equation = RichTextBox4.Text.Trim
+    '        If IsNumeric(TextBox1.Text) Then
+    '            Dim a = TextBox1.Text
+    '            If IsNumeric(TextBox2.Text) Then
+    '                Dim b = TextBox2.Text
+    '                If IsNumeric(TextBox3.Text) Then
+    '                    Dim N = CDbl(TextBox3.Text)
+    '                    calculationLebesgueDefinite(CDbl(a), CDbl(b), equation, N, 0)
+    '                Else
+    '                    Me.RichTextBox3.AppendText("Choose N")
+    '                End If
+    '            Else
+    '                Me.RichTextBox3.AppendText("Choose B")
+    '            End If
+    '        Else
+    '            Me.RichTextBox3.AppendText("Choose A")
+    '        End If
+    '    Else
+    '        Me.RichTextBox3.AppendText("Write an equation!")
+    '    End If
+    'End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
 
