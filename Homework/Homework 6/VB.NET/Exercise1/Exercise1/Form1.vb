@@ -29,7 +29,7 @@ Public Class Form1
     Private semiBrushBlue As New SolidBrush(Color.FromArgb(180, Color.LightSkyBlue))
     Private semiBrushOrange As New SolidBrush(Color.FromArgb(200, Color.Orange))
     Private semiRed As New SolidBrush(Color.FromArgb(170, Color.Red))
-    Private semiYellow As New SolidBrush(Color.FromArgb(170, Color.Yellow))
+    Private semiYellow As New SolidBrush(Color.FromArgb(190, Color.Yellow))
 
     Private b As Bitmap
     Private g As Graphics
@@ -96,7 +96,7 @@ Public Class Form1
         Dim textC As New StringFormat
         textC.Alignment = StringAlignment.Center
         textC.LineAlignment = StringAlignment.Center
-        Dim sizeHeightC As Single = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(sizeHystogramEpsilon * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
+        Dim sizeHeightC As Single = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(0.02 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
         Dim rect1C = New Rectangle(positionXC, positionYC, 100, sizeHeightC)
         g.DrawRectangle(Pens.Black, rect1C)
         g.FillRectangle(semiRed, positionXC, positionYC, 100, sizeHeightC)
@@ -198,7 +198,7 @@ Public Class Form1
         textC.Alignment = StringAlignment.Center
         textC.LineAlignment = StringAlignment.Center
 
-        Dim sizeHeightC As Single = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(sizeHystogramEpsilon * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
+        Dim sizeHeightC As Single = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(0.02 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
 
         Dim X1_LineP As Single = Me.X_ViewPort(0, ViewPort, MinX_windows, RangeX)
         Dim X2_LineP As Single = Me.X_ViewPort(ViewPort.Width + 100, ViewPort, MinX_windows, RangeX)
@@ -208,9 +208,9 @@ Public Class Form1
         Dim XSP_LinePlusEp As Single = Me.X_ViewPort(ViewPort.Width, ViewPort, MinX_windows, RangeX)
         Dim YSP_LinePlusEp As Single = Me.Y_ViewPort((p) * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
 
-        Dim rect1P = New Rectangle(XSP_LinePlusEp - 100, YSP_LinePlusEp, 100, sizeHeightC - 1)
+        Dim rect1P = New Rectangle(XSP_LinePlusEp - 100, YSP_LinePlusEp - sizeHeightC / 2, 100, sizeHeightC - 1)
         g.DrawRectangle(Pens.Black, rect1P)
-        g.FillRectangle(semiYellow, XSP_LinePlusEp - 100, YSP_LinePlusEp, 100, sizeHeightC - 1)
+        g.FillRectangle(semiYellow, XSP_LinePlusEp - 100, YSP_LinePlusEp - sizeHeightC / 2, 100, sizeHeightC - 1)
         g.DrawString("P", SmallFont, Brushes.Black, rect1P, textC)
 
         Me.PictureBox1.Image = b
@@ -237,12 +237,12 @@ Public Class Form1
 
         textC.Alignment = StringAlignment.Center
         textC.LineAlignment = StringAlignment.Center
-        Dim sizeHeightC As Single = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(sizeHystogramEpsilon * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
+        Dim sizeHeightC As Single = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(0.02 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
         Dim XS_LinePlusEp As Single = Me.X_ViewPort(ViewPort.Width, ViewPort, MinX_windows, RangeX)
         Dim YS_LinePlusEp As Single = Me.Y_ViewPort((p + epsilon) * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
-        Dim rect1C = New Rectangle(XS_LinePlusEp - 100, YS_LinePlusEp, 100, sizeHeightC)
+        Dim rect1C = New Rectangle(XS_LinePlusEp - 100, YS_LinePlusEp - sizeHeightC, 100, sizeHeightC)
         g.DrawRectangle(Pens.Black, rect1C)
-        g.FillRectangle(semiYellow, XS_LinePlusEp - 100, YS_LinePlusEp, 100, sizeHeightC - 1)
+        g.FillRectangle(semiYellow, XS_LinePlusEp - 100, YS_LinePlusEp - sizeHeightC, 100, sizeHeightC - 1)
         g.DrawString("P + Epsilon", SmallFont, Brushes.Black, rect1C, textC)
 
 
@@ -495,6 +495,8 @@ Public Class Form1
 
             If (epsilon < 0.2) Then
                 SmallFont = New Font("Calibri", 8, FontStyle.Regular, GraphicsUnit.Pixel)
+            Else
+                SmallFont = New Font("Calibri", 13, FontStyle.Regular, GraphicsUnit.Pixel)
             End If
             DrawSceneEpsilon()
         Else
