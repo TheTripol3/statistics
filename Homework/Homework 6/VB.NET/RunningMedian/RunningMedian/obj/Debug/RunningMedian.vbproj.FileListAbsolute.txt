@@ -1,0 +1,12 @@
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\bin\Debug\RunningMedian.exe.config
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\bin\Debug\RunningMedian.exe
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\bin\Debug\RunningMedian.pdb
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\bin\Debug\RunningMedian.xml
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\obj\Debug\RunningMedian.vbprojAssemblyReference.cache
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\obj\Debug\RunningMedian.Resources.resources
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\obj\Debug\RunningMedian.vbproj.GenerateResource.cache
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\obj\Debug\RunningMedian.vbproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\obj\Debug\RunningMedian.exe
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\obj\Debug\RunningMedian.xml
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\obj\Debug\RunningMedian.pdb
+C:\Users\andre\Desktop\RunningMedian\RunningMedian\obj\Debug\RunningMedian.Form1.resources
