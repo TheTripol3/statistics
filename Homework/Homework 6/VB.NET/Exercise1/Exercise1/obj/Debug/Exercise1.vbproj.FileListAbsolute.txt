@@ -10,3 +10,15 @@ C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.vbproj.CoreCompil
 C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.exe
 C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.xml
 C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.pdb
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\bin\Debug\Exercise1.exe.config
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\bin\Debug\Exercise1.exe
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\bin\Debug\Exercise1.pdb
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\bin\Debug\Exercise1.xml
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\obj\Debug\Exercise1.vbprojAssemblyReference.cache
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\obj\Debug\Exercise1.Form1.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\obj\Debug\Exercise1.Resources.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\obj\Debug\Exercise1.vbproj.GenerateResource.cache
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\obj\Debug\Exercise1.vbproj.CoreCompileInputs.cache
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\obj\Debug\Exercise1.exe
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\obj\Debug\Exercise1.xml
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 6\Practical\Exercise1\Exercise1\obj\Debug\Exercise1.pdb

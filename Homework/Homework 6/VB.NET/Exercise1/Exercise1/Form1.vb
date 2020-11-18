@@ -16,7 +16,7 @@ Public Class Form1
 
     Private epsilon As Double = Nothing
     'Private sizeHystogram As Double = 0.1
-    Private sizeHystogramEpsilon As Double = 0.05
+    Private sizeHystogramEpsilon As Double = Nothing
 
     Private listDictionary As New List(Of Dictionary(Of Integer, Integer))
     Private listIntervals As New List(Of sizeIntervals)
@@ -26,7 +26,7 @@ Public Class Form1
     Private countTotal As Integer = 0
     Private countTotalJ As Integer = 0
 
-    Private semiBrushBlue As New SolidBrush(Color.FromArgb(180, Color.LightSkyBlue))
+    Private semiBrushBlue As New SolidBrush(Color.Blue)
     Private semiBrushOrange As New SolidBrush(Color.FromArgb(200, Color.Orange))
     Private semiRed As New SolidBrush(Color.FromArgb(170, Color.Red))
     Private semiYellow As New SolidBrush(Color.FromArgb(190, Color.Yellow))
@@ -51,10 +51,11 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture
-        TextBox1.Text = 1000
-        TextBox2.Text = 200
-        TextBox3.Text = 500
-        TextBox4.Text = 0.2
+        TextBox1.Text = 4000
+        TextBox2.Text = 1000
+        TextBox3.Text = 1500
+        TextBox4.Text = 0.1
+        TextBox5.Text = 0.005
     End Sub
 
 
@@ -69,20 +70,20 @@ Public Class Form1
             Dim sizeHeight As Single = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort(sizeHystogramEpsilon * Math.Truncate(ViewPort.Height / maxRow), ViewPort, MinY_windows, RangeY)
 
             Dim freqAs As Double = interVal.countInt
-            Dim freqRel As Single = Me.X_ViewPort((interVal.countInt / total) * (ViewPort.Width / (10)), ViewPort, MinX_windows, RangeX) -
+            Dim freqRel As Single = Me.X_ViewPort((interVal.countInt / total) * (ViewPort.Width), ViewPort, MinX_windows, RangeX) -
                  Me.X_ViewPort(0 * (ViewPort.Width / (n + 1)), ViewPort, MinX_windows, RangeX)
 
-            g.DrawRectangle(Pens.Black, positionX, positionY, freqRel, sizeHeight)
-            g.FillRectangle(semiBrushBlue, positionX, positionY, freqRel, sizeHeight)
+            g.DrawRectangle(Pens.Blue, positionX, positionY, freqRel, sizeHeight)
+            g.FillRectangle(Brushes.Blue, positionX, positionY, freqRel, sizeHeight)
 
 
-            Dim text As New StringFormat
-            text.Alignment = StringAlignment.Center
-            text.LineAlignment = StringAlignment.Center
-            Dim rect1 = New Rectangle(positionX - 100, positionY, 100, sizeHeight)
-            g.DrawRectangle(Pens.Black, rect1)
-            g.FillRectangle(semiBrushOrange, positionX - 100, positionY, 100, sizeHeight - 1)
-            g.DrawString(Math.Round(((interVal.countInt / total) * 100), 2) & "% " & Environment.NewLine & interVal.countInt.ToString, SmallFont, Brushes.Black, rect1, text)
+            'Dim text As New StringFormat
+            'text.Alignment = StringAlignment.Center
+            'text.LineAlignment = StringAlignment.Center
+            'Dim rect1 = New Rectangle(positionX - 100, positionY, 100, sizeHeight)
+            'g.DrawRectangle(Pens.Black, rect1)
+            'g.FillRectangle(semiBrushOrange, positionX - 100, positionY, 100, sizeHeight - 1)
+            'g.DrawString(Math.Round(((interVal.countInt / total) * 100), 2) & "% " & Environment.NewLine & interVal.countInt.ToString, SmallFont, Brushes.Black, rect1, text)
 
 
 
@@ -162,7 +163,7 @@ Public Class Form1
                     nPen = New Pen(newColor, 0.8)
                     nBrush = New SolidBrush(newColor)
                 Else
-                    newColor = Color.FromArgb(5, 210, 210, 210)
+                    newColor = Color.Transparent
                     nPen = New Pen(newColor, 0.8)
                     nBrush = New SolidBrush(newColor)
                 End If
@@ -211,7 +212,7 @@ Public Class Form1
         Dim rect1P = New Rectangle(XSP_LinePlusEp - 100, YSP_LinePlusEp - sizeHeightC / 2, 100, sizeHeightC - 1)
         g.DrawRectangle(Pens.Black, rect1P)
         g.FillRectangle(semiYellow, XSP_LinePlusEp - 100, YSP_LinePlusEp - sizeHeightC / 2, 100, sizeHeightC - 1)
-        g.DrawString("P", SmallFont, Brushes.Black, rect1P, textC)
+        g.DrawString("p", SmallFont, Brushes.Black, rect1P, textC)
 
         Me.PictureBox1.Image = b
 
@@ -243,7 +244,7 @@ Public Class Form1
         Dim rect1C = New Rectangle(XS_LinePlusEp - 100, YS_LinePlusEp - sizeHeightC, 100, sizeHeightC)
         g.DrawRectangle(Pens.Black, rect1C)
         g.FillRectangle(semiYellow, XS_LinePlusEp - 100, YS_LinePlusEp - sizeHeightC, 100, sizeHeightC - 1)
-        g.DrawString("P + Epsilon", SmallFont, Brushes.Black, rect1C, textC)
+        g.DrawString("p + Epsilon", SmallFont, Brushes.Black, rect1C, textC)
 
 
         Dim X1_LineMinusEp As Single = Me.X_ViewPort(0, ViewPort, MinX_windows, RangeX)
@@ -256,7 +257,7 @@ Public Class Form1
         Dim rect1M = New Rectangle(XSM_LinePlusEp - 100, YSM_LinePlusEp, 100, sizeHeightC)
         g.DrawRectangle(Pens.Black, rect1M)
         g.FillRectangle(semiYellow, XSM_LinePlusEp - 100, YSM_LinePlusEp, 100, sizeHeightC - 1)
-        g.DrawString("P - Epsilon", SmallFont, Brushes.Black, rect1M, textC)
+        g.DrawString("p - Epsilon", SmallFont, Brushes.Black, rect1M, textC)
 
         Dim X_LineJ As Single = Me.X_ViewPort((j - (j * 15 / 100)) * (ViewPort.Width / (n + 1)), ViewPort, MinX_windows, RangeX)
         Dim Y1_LineJ As Single = Me.Y_ViewPort(0, ViewPort, MinY_windows, RangeY)
@@ -454,51 +455,47 @@ Public Class Form1
         listIntervalsEpsilon.Clear()
         listIntervalsEpsilonJ.Clear()
         TextBox4.ForeColor = Color.Black
+        TextBox5.ForeColor = Color.Black
         countTotal = 0
         countTotalJ = 0
 
         If (IsNumeric(TextBox4.Text)) AndAlso (Double.Parse(TextBox4.Text) > 0) Then
 
-            epsilon = Double.Parse(TextBox4.Text)
-            sizeHystogramEpsilon = epsilon / 4
+            If (IsNumeric(TextBox5.Text)) AndAlso (Double.Parse(TextBox5.Text) > 0) Then
+                epsilon = Double.Parse(TextBox4.Text)
+                sizeHystogramEpsilon = Double.Parse(TextBox5.Text)
 
-            'initialize(listIntervals, p, sizeHystogram)
-            'initialize(listIntervalsJ, p, sizeHystogram)
+                'initialize(listIntervals, p, sizeHystogram)
+                'initialize(listIntervalsJ, p, sizeHystogram)
 
-            initialize(listIntervalsEpsilon, p, sizeHystogramEpsilon)
-            initialize(listIntervalsEpsilonJ, p, sizeHystogramEpsilon)
+                initialize(listIntervalsEpsilon, p, sizeHystogramEpsilon)
+                initialize(listIntervalsEpsilonJ, p, sizeHystogramEpsilon)
 
-            For Each objectList In listDictionary
-                For Each kvp As KeyValuePair(Of Integer, Integer) In objectList
-                    If ((kvp.Value / kvp.Key) <= (p + epsilon)) AndAlso ((kvp.Value / kvp.Key) >= (p - epsilon)) Then
-                        countTotal += 1
-                        Dim rangeE As String = findRange(Math.Round((kvp.Value / kvp.Key), 2), listIntervalsEpsilon)
-                        calculateContinuousDistribution(sizeHystogramEpsilon, Math.Round((kvp.Value / kvp.Key), 2), listIntervalsEpsilon, rangeE)
-                    End If
-                    'Me.RichTextBox1.AppendText(Math.Round((kvp.Value / kvp.Key), 2) & "  ")
-                    'Dim rangeN As String = findRange(Math.Round((kvp.Value / kvp.Key), 2), listIntervals)
-
-                    'calculateContinuousDistribution(sizeHystogram, Math.Round((kvp.Value / kvp.Key), 2), listIntervals, rangeN)
-
-                    If (kvp.Key <= j) Then
+                For Each objectList In listDictionary
+                    For Each kvp As KeyValuePair(Of Integer, Integer) In objectList
                         If ((kvp.Value / kvp.Key) <= (p + epsilon)) AndAlso ((kvp.Value / kvp.Key) >= (p - epsilon)) Then
-                            countTotalJ += 1
-                            Dim rangeE As String = findRange(Math.Round((kvp.Value / kvp.Key), 2), listIntervalsEpsilonJ)
-                            calculateContinuousDistribution(sizeHystogramEpsilon, Math.Round((kvp.Value / kvp.Key), 2), listIntervalsEpsilonJ, rangeE)
+                            countTotal += 1
+                            Dim rangeE As String = findRange((kvp.Value / kvp.Key), listIntervalsEpsilon)
+                            calculateContinuousDistribution(sizeHystogramEpsilon, (kvp.Value / kvp.Key), listIntervalsEpsilon, rangeE)
                         End If
-                        'calculateContinuousDistribution(sizeHystogram, Math.Round((kvp.Value / kvp.Key), 2), listIntervalsJ, rangeN)
-                    End If
+
+                        If (kvp.Key <= j) Then
+                            If ((kvp.Value / kvp.Key) <= (p + epsilon)) AndAlso ((kvp.Value / kvp.Key) >= (p - epsilon)) Then
+                                countTotalJ += 1
+                                Dim rangeE As String = findRange((kvp.Value / kvp.Key), listIntervalsEpsilonJ)
+                                calculateContinuousDistribution(sizeHystogramEpsilon, (kvp.Value / kvp.Key), listIntervalsEpsilonJ, rangeE)
+                            End If
+                        End If
+
+                    Next
 
                 Next
-                'Me.RichTextBox1.AppendText(Environment.NewLine)
-            Next
 
-            If (epsilon < 0.2) Then
-                SmallFont = New Font("Calibri", 8, FontStyle.Regular, GraphicsUnit.Pixel)
+                DrawSceneEpsilon()
             Else
-                SmallFont = New Font("Calibri", 13, FontStyle.Regular, GraphicsUnit.Pixel)
+                TextBox5.ForeColor = Color.Red
             End If
-            DrawSceneEpsilon()
+
         Else
             TextBox4.ForeColor = Color.Red
         End If
@@ -524,12 +521,12 @@ Public Class Form1
             Me.TreeView1.Nodes(0).Nodes.Add(New TreeNode(stringName))
 
 
-            For Each kvp As KeyValuePair(Of Integer, Integer) In objectList
-                Dim X As Double = kvp.Key
-                Dim Y As Double = kvp.Value / kvp.Key
+            'For Each kvp As KeyValuePair(Of Integer, Integer) In objectList
+            '    Dim X As Double = kvp.Key
+            '    Dim Y As Double = kvp.Value / kvp.Key
 
-                TreeView1.Nodes(0).Nodes(countNode - 1).Nodes.Add(New TreeNode(X.ToString & " / " & Y.ToString))
-            Next
+            '    TreeView1.Nodes(0).Nodes(countNode - 1).Nodes.Add(New TreeNode(X.ToString & " / " & Y.ToString))
+            'Next
 
             countNode += 1
         Next
