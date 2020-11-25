@@ -1,0 +1,24 @@
+C:\Users\andre\Desktop\Exercise1\Exercise1\bin\Debug\Exercise1.exe.config
+C:\Users\andre\Desktop\Exercise1\Exercise1\bin\Debug\Exercise1.exe
+C:\Users\andre\Desktop\Exercise1\Exercise1\bin\Debug\Exercise1.pdb
+C:\Users\andre\Desktop\Exercise1\Exercise1\bin\Debug\Exercise1.xml
+C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.vbprojAssemblyReference.cache
+C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.Form1.resources
+C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.Resources.resources
+C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.vbproj.GenerateResource.cache
+C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.vbproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.exe
+C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.xml
+C:\Users\andre\Desktop\Exercise1\Exercise1\obj\Debug\Exercise1.pdb
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\bin\Debug\Exercise1.exe.config
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\bin\Debug\Exercise1.exe
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\bin\Debug\Exercise1.pdb
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\bin\Debug\Exercise1.xml
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\obj\Debug\Exercise1.vbprojAssemblyReference.cache
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\obj\Debug\Exercise1.Form1.resources
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\obj\Debug\Exercise1.Resources.resources
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\obj\Debug\Exercise1.vbproj.GenerateResource.cache
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\obj\Debug\Exercise1.vbproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\obj\Debug\Exercise1.exe
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\obj\Debug\Exercise1.xml
+C:\Users\andre\Desktop\Exercise1 - Copia\Exercise1\obj\Debug\Exercise1.pdb
