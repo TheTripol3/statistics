@@ -1,0 +1,95 @@
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.exe.config
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.exe
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.pdb
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.xml
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbprojAssemblyReference.cache
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form1.resources
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Resources.resources
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbproj.GenerateResource.cache
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbproj.CoreCompileInputs.cache
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.exe
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.xml
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.pdb
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form2.resources
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form3.resources
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form4.resources
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form5.resources
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form6.resources
+C:\Users\Andrea\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form7.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.exe.config
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.exe
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.pdb
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.xml
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbprojAssemblyReference.cache
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form1.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form2.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form3.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form4.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form5.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form6.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form7.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Resources.resources
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbproj.GenerateResource.cache
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbproj.CoreCompileInputs.cache
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.exe
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.xml
+C:\Users\Andrea\Desktop\Documenti\Università degli Studi di Roma - La Sapienza\Cybersecurity\Primo Anno\Statistics\Lectures (Streaming)\Lesson 3\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.pdb
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.exe.config
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.exe
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.pdb
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.xml
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbprojAssemblyReference.cache
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form1.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form3.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form4.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form5.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form6.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form7.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Resources.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbproj.GenerateResource.cache
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.exe
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.xml
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.pdb
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form8.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form10.resources
+C:\Users\andre\Desktop\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form11.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form1.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form10.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form11.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form3.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form4.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form5.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form6.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form7.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Form8.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV_Reader.Resources.resources
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV-Reader.vbproj.GenerateResource.cache
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV-Reader.vbproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV-Reader.exe
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV-Reader.xml
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\obj\Debug\CSV-Reader.pdb
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\bin\Debug\CSV-Reader.exe.config
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\bin\Debug\CSV-Reader.exe
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\bin\Debug\CSV-Reader.pdb
+C:\Users\andre\Desktop\CSV-Reader - Copia (2)\CSV-Reader\bin\Debug\CSV-Reader.xml
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.exe.config
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.exe
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.pdb
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\bin\Debug\CSV-Reader.xml
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbprojAssemblyReference.cache
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form1.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form10.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form11.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form3.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form4.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form5.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form6.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form7.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Form8.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV_Reader.Resources.resources
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbproj.GenerateResource.cache
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.vbproj.CoreCompileInputs.cache
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.exe
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.xml
+D:\Dati\Personale\Università Degli Studi di Roma - La Sapienza\Primo Anno\Statistics\Lectures (Streaming)\Lesson 4\Practical\CSV-Reader\CSV-Reader\obj\Debug\CSV-Reader.pdb
