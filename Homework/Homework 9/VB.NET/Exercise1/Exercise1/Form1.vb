@@ -58,15 +58,14 @@
     Dim intervalSizeN2 As Double = 0.2
     Dim startingEndPointN2 As Double = 0.5
 
-    Dim listIntervals As New List(Of sizeIntervals)
-    Dim listIntervalsB2 As New List(Of sizeIntervals)
+    Dim listIntervalsNFinal As New List(Of sizeIntervals)
     Dim listIntervalsN As New List(Of sizeIntervals)
     Dim listIntervalsN2 As New List(Of sizeIntervals)
 
 
     Private listDictN2 As New List(Of Dictionary(Of Integer, Double))
     Private listDictN As New List(Of Dictionary(Of Integer, Double))
-
+    Private listDictNFinal As New List(Of Dictionary(Of Integer, Double))
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -77,10 +76,9 @@
 
 
     Private Sub Button1_MouseClick(sender As Object, e As MouseEventArgs) Handles Button1.MouseClick
-        listIntervals.Clear()
-        listIntervalsB2.Clear()
         listIntervalsN.Clear()
         listIntervalsN2.Clear()
+        listIntervalsNFinal.Clear()
         Me.TextBox1.ForeColor = Color.Black
         Me.TextBox2.ForeColor = Color.Black
         Me.TextBox3.ForeColor = Color.Black
@@ -93,7 +91,7 @@
                     sigma = Convert.ToInt32(TextBox3.Text)
 
                     generation()
-                    initialize(listIntervalsN, startingEndPointN, intervalSizeN)
+                    initialize(listIntervalsNFinal, startingEndPointN, intervalSizeN)
                     initialize(listIntervalsN2, startingEndPointN2, intervalSizeN2)
                     PhaseDistribution()
                     InitializeGraphics()
@@ -113,11 +111,13 @@
     Private Sub generation()
         listDictN.Clear()
         listDictN2.Clear()
+        listDictNFinal.Clear()
 
         For i As Integer = 1 To m
 
             Dim dicN As New Dictionary(Of Integer, Double)
             Dim dicN2 As New Dictionary(Of Integer, Double)
+            Dim dicNFinal As New Dictionary(Of Integer, Double)
 
             Dim sumS As Double = 0.0
             For j As Integer = 1 To n
@@ -131,10 +131,15 @@
                     dicN2.Add(j - 1, sumS)
                 End If
 
+                If (j <= n) Then
+                    dicNFinal.Add(j - 1, sumS)
+                End If
+
             Next
 
             listDictN.Add(dicN)
             listDictN2.Add(dicN2)
+            listDictNFinal.Add(dicNFinal)
 
         Next
 
@@ -153,10 +158,10 @@
             Next
         Next
 
-        For Each kv In listDictN
+        For Each kv In listDictNFinal
             For Each kvp In kv
-                Dim numb As String = findRange((kvp.Value), listIntervalsN)
-                calculateContinuousDistribution(intervalSizeN, (kvp.Value), listIntervalsN, numb)
+                Dim numb As String = findRange((kvp.Value), listIntervalsNFinal)
+                calculateContinuousDistribution(intervalSizeN, (kvp.Value), listIntervalsNFinal, numb)
             Next
         Next
     End Sub
@@ -171,17 +176,17 @@
         Me.g.TextRenderingHint = Drawing.Text.TextRenderingHint.AntiAlias
 
         MinX_windows = 0
-        MaxX_windows = PictureBox1.Width - 20
-        MinY_windows = 0
-        MaxY_windows = PictureBox1.Height - 20
+        MaxX_windows = PictureBox1.Width
+        MinY_windows = -PictureBox1.Height / 2
+        MaxY_windows = PictureBox1.Height / 2
 
         RangeX = MaxX_windows - MinX_windows
         RangeY = MaxY_windows - MinY_windows
 
         ViewPort.Width = Math.Abs(MinX_windows) + Math.Abs(MaxX_windows)
         ViewPort.Height = Math.Abs(MinY_windows) + Math.Abs(MaxY_windows)
-        ViewPort.X = 10
-        ViewPort.Y = 10
+        ViewPort.X = 0
+        ViewPort.Y = 0
 
 
         'PictureBox2
@@ -228,10 +233,6 @@
         Dim Y_Line As Single = Me.Y_ViewPort(MaxY_windows * Math.Truncate(ViewPort.Height / MaxY_windows), ViewPort, MinY_windows, RangeY)
         g.DrawLine(Pens.Black, X1_Line, Y_Line, X2_Line, Y_Line)
 
-        Dim X1_Line0 As Single = Me.X_ViewPort(0, ViewPort, MinX_windows, RangeX)
-        Dim X2_Line0 As Single = Me.X_ViewPort(ViewPort.Width, ViewPort, MinX_windows, RangeX)
-        Dim Y_Line0 As Single = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / MaxY_windows), ViewPort, MinY_windows, RangeY)
-        g.DrawLine(Pens.Black, X1_Line0, Y_Line0, X2_Line0, Y_Line0)
 
 
         Dim countPath As Integer = 0
@@ -241,13 +242,13 @@
             Dim nBrush As SolidBrush = New SolidBrush(newColor)
 
 
-            X_Previous = Me.X_ViewPort(0 * (ViewPort.Width / (n + 1)), ViewPort, MinX_windows, RangeX)
-            Y_Previous = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort((MaxY_windows / 2) * Math.Truncate(ViewPort.Height / MaxY_windows), ViewPort, MinY_windows, RangeY)
+            X_Previous = Me.X_ViewPort(0 * (ViewPort.Width / (n + Convert.ToInt32(TextBox1.Text / 4))), ViewPort, MinX_windows, RangeX)
+            Y_Previous = Me.Y_ViewPort(0 * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY)
 
             For Each kvp As KeyValuePair(Of Integer, Double) In objectList
 
-                Dim X_Device As Single = Me.X_ViewPort(kvp.Key * (ViewPort.Width / (n + 1)), ViewPort, MinX_windows, RangeX)
-                Dim Y_Device As Single = Me.Y_ViewPort(kvp.Value * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort((MaxY_windows / 2) * Math.Truncate(ViewPort.Height / MaxY_windows), ViewPort, MinY_windows, RangeY)
+                Dim X_Device As Single = Me.X_ViewPort(kvp.Key * (ViewPort.Width / (n + Convert.ToInt32(TextBox1.Text / 4))), ViewPort, MinX_windows, RangeX)
+                Dim Y_Device As Single = Me.Y_ViewPort(kvp.Value * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY)
 
                 'g.FillEllipse(nBrush, New Rectangle(New Point(X_Device - 3, Y_Device - 3), New Size(3, 3)))
 
@@ -272,9 +273,9 @@
         For Each kvp As sizeIntervals In listIntervalsN2
             Dim freq As Double = kvp.countInt / (n / 2 * m)
 
-            Dim XL As Single = Me.X_ViewPort(((n / 2) - ((n / 2) * 15 / 100)) * (ViewPort.Width / (n + 1)), ViewPort, MinX_windows, RangeX)
-            Dim YL2 As Single = Me.Y_ViewPort(kvp.upperPoint * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort((MaxY_windows / 2) * Math.Truncate(ViewPort.Height / MaxY_windows), ViewPort, MinY_windows, RangeY)
-            Dim YL1 As Single = Me.Y_ViewPort(kvp.lowerPoint * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort((MaxY_windows / 2) * Math.Truncate(ViewPort.Height / MaxY_windows), ViewPort, MinY_windows, RangeY)
+            Dim XL As Single = Me.X_ViewPort((n / 2) * (ViewPort.Width / (n + Convert.ToInt32(TextBox1.Text / 4))), ViewPort, MinX_windows, RangeX)
+            Dim YL2 As Single = Me.Y_ViewPort(kvp.upperPoint * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY)
+            Dim YL1 As Single = Me.Y_ViewPort(kvp.lowerPoint * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY)
 
             Dim X2L As Single = Me.X_ViewPort(ViewPort.Width, ViewPort, MinX_windows, RangeX)
 
@@ -291,12 +292,12 @@
             'Me.RichTextBox1.AppendText(kvp.lowerPoint & "-" & kvp.upperPoint & "    " & kvp.countInt & "    " & freq & Environment.NewLine)
         Next
 
-        For Each kvp As sizeIntervals In listIntervalsN
+        For Each kvp As sizeIntervals In listIntervalsNFinal
             Dim freq As Double = kvp.countInt / (n * m)
 
-            Dim XL As Single = Me.X_ViewPort((n - (n * 15 / 100)) * (ViewPort.Width / (n + 1)), ViewPort, MinX_windows, RangeX)
-            Dim YL2 As Single = Me.Y_ViewPort(kvp.upperPoint * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort((MaxY_windows / 2) * Math.Truncate(ViewPort.Height / MaxY_windows), ViewPort, MinY_windows, RangeY)
-            Dim YL1 As Single = Me.Y_ViewPort(kvp.lowerPoint * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY) - Me.Y_ViewPort((MaxY_windows / 2) * Math.Truncate(ViewPort.Height / MaxY_windows), ViewPort, MinY_windows, RangeY)
+            Dim XL As Single = Me.X_ViewPort(n * (ViewPort.Width / (n + Convert.ToInt32(TextBox1.Text / 4))), ViewPort, MinX_windows, RangeX)
+            Dim YL2 As Single = Me.Y_ViewPort(kvp.upperPoint * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY)
+            Dim YL1 As Single = Me.Y_ViewPort(kvp.lowerPoint * Math.Truncate(ViewPort.Height / 15), ViewPort, MinY_windows, RangeY)
 
             Dim X2L As Single = Me.X_ViewPort(ViewPort.Width, ViewPort, MinX_windows, RangeX)
 
